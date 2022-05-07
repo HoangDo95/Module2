@@ -152,6 +152,7 @@ import java.util.Scanner;
                     System.out.print(s1 + " and " + s3);
                 } else {
                     System.out.print(s1 + " and " + s2 + " " + s3);
+
                 }
             }
         }

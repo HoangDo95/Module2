@@ -2,7 +2,7 @@ package ss01_java.bai_tap;
 
 import java.util.Scanner;
 //em còn trường hợp 3 chữ số làm chưa ra
-public class numberToLetter {
+public class NumberToLetter {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
