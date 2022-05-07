@@ -5,21 +5,30 @@ import java.util.Scanner;
 
 public class ThemPhanTu {
     public static void main(String[] args) {
-        int[] numArr1 = {1, 2, 3, 4, 5};
-        Scanner so = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Độ dài mảng");
+        int length = scanner.nextInt();
+        int arr[] = new int[length];
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println("Nhập mảng");
+            arr[i] = scanner.nextInt();
+        }
+        System.out.println(Arrays.toString(arr));
         System.out.println("Nhập số");
-        int num = so.nextInt();
+        int num = scanner.nextInt();
 
         Scanner index = new Scanner(System.in);
         System.out.println("Nhập vị trí thêm");
         int vtr = index.nextInt();
-        for (int i = 0; i < numArr1.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             if (vtr == i) {
-              num = numArr1[i];
-
+                for (int j = arr.length - 1; j > vtr; j--) {
+                    arr[j] = arr[j - 1];
+                }
             }
         }
-        System.out.println(Arrays.toString(numArr1));
+        arr[vtr] = num;
+        System.out.println(Arrays.toString(arr));
 
     }
 }
