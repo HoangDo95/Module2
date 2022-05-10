@@ -2,7 +2,7 @@ package ss02_loop_array.bai_tap.Array;
 
 import java.util.Scanner;
 
-public class DemKyTu {
+public class RemoveCharacter {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập chuỗi");

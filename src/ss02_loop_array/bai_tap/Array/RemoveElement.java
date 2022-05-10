@@ -3,7 +3,7 @@ package ss02_loop_array.bai_tap.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class XoaPhanTu {
+public class RemoveElement {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Độ dài mảng");

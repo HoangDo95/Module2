@@ -3,7 +3,7 @@ package ss02_loop_array.bai_tap.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class ThemPhanTu {
+public class AddElement {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Độ dài mảng");
