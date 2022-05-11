@@ -65,16 +65,31 @@ public class Fan {
         this.color = color;
     }
 
+    @Override
     public String toString() {
-        String state = "";
-        if (this.isOn()) {
-            state += ("fan is on");
-            state += (" Speed: " + this.speed);
-        } else {
-            state += ("fan is off");
+        if(isOn()) {
+            return "Fan is on{" +
+                    " speed=" + this.speed +
+                    ", radius=" + this.radius +
+                    ", color='" + this.color + '\'' +
+                    '}';
+        }else {
+            return "Fan is off{" +
+                    " radius=" + this.radius +
+                    ", color='" + this.color + '\'' +
+                    '}';
         }
-        state += (" Color: " + this.color);
-        state += (" Radius: " + this.radius);
-        return state;
     }
+//    public String toString() {
+//        String state = "";
+//        if (this.isOn()) {
+//            state += ("fan is on");
+//            state += (" Speed: " + this.speed);
+//        } else {
+//            state += ("fan is off");
+//        }
+//        state += (" Color: " + this.color);
+//        state += (" Radius: " + this.radius);
+//        return state;
+//    }
 }
