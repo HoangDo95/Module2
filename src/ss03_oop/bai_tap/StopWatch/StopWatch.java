@@ -1,33 +1,35 @@
 package ss03_oop.bai_tap.StopWatch;
 
-import java.time.LocalTime;
-
 public class StopWatch {
-    private LocalTime startTime, endTime;
-    public StopWatch(){
-        startTime = LocalTime.now();
-    }
-    public StopWatch(LocalTime startTime, LocalTime endTime) {
-        this.startTime = startTime;
-        this.endTime = endTime;
-    }
+    private long startTime, endTime;
 
-    public LocalTime getStartTime() {
+    public long getStartTime() {
         return startTime;
     }
 
-    public LocalTime getEndTime() {
+    public void setStartTime(long startTime) {
+        this.startTime = startTime;
+    }
+
+    public long getEndTime() {
         return endTime;
     }
-    public void star(){
-        startTime = LocalTime.now();
+
+    public void setEndTime(long endTime) {
+        this.endTime = endTime;
     }
-    public void stop(){
-        endTime = LocalTime.now();
+
+    public void start(){
+        setStartTime(System.currentTimeMillis());
     }
-    public int getElapsedTime(){
-        return ((endTime.getHour()-startTime.getHour())*3600 + (endTime.getMinute()-startTime.getMinute())*60 + (endTime.getSecond()-startTime.getSecond())*1000);
+    public void end(){
+        setEndTime(System.currentTimeMillis());
     }
+    public long getElapsedTime(){
+        return getEndTime()- getStartTime();
+    }
+
+
 }
 
 

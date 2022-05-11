@@ -1,23 +1,30 @@
 package ss03_oop.bai_tap.StopWatch;
-
+import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
-        double[] arr = new double[100000];
-        for (int i = 0; i < 1000; i++) {
-            arr[i] = Math.random();
+        int[] arr = new int[100000];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (int) (Math.random() * 1000);
         }
+        System.out.println("Array : " + Arrays.toString(arr));
         StopWatch stopWatch = new StopWatch();
-        stopWatch.star();
-        for (int i = 0; i < arr.length - 1; i++) {
+        stopWatch.start();
+        sort(arr);
+        stopWatch.end();
+        System.out.println("Ranger : " + Arrays.toString(arr));
+        System.out.println("Timer : " + stopWatch.getElapsedTime());
+
+    }
+    public static void sort(int... arr) {
+        for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
-                if (arr[i] > arr[j]) {
-                    double tempt = arr[i];
+                if (arr[j] < arr[i]) {
+                    int swap = arr[i];
                     arr[i] = arr[j];
-                    arr[j] = tempt;
+                    arr[j] = swap;
                 }
             }
         }
-        stopWatch.stop();
-        System.out.println(stopWatch.getElapsedTime());
     }
+
 }

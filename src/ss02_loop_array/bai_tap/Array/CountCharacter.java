@@ -2,15 +2,15 @@ package ss02_loop_array.bai_tap.Array;
 
 import java.util.Scanner;
 
-public class RemoveCharacter {
+public class CountCharacter {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập chuỗi");
         String string = scanner.nextLine();
         char[] arr = string.toCharArray();
         System.out.println("Nhập ký tự");
-        String kt = scanner.nextLine();
-        char[] arr1 = kt.toCharArray();
+        String resut = scanner.nextLine();
+        char[] arr1 = resut.toCharArray();
         int count = 0;
         for (int i=0;i<arr.length;i++) {
             if (arr1[0] == arr[i]) {
@@ -18,6 +18,6 @@ public class RemoveCharacter {
             }
 
         }
-        System.out.println("Ký tự " + kt + " suất hiện " + count + " lần");
+        System.out.println("Ký tự " + resut + " suất hiện " + count + " lần");
     }
 }
