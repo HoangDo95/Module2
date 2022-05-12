@@ -3,7 +3,8 @@ package ss05_Inheritance.bai_tap.Circle;
 public class Circle {
     private double radius;
     private String color;
-    public Circle(){
+
+    public Circle() {
 
     }
 
@@ -27,8 +28,9 @@ public class Circle {
     public void setColor(String color) {
         this.color = color;
     }
-    public double getArea(){
-        return Math.pow(this.radius,2)*Math.PI;
+
+    public double getArea() {
+        return Math.pow(this.radius, 2) * Math.PI;
     }
 
     @Override
