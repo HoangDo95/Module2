@@ -1,9 +1,9 @@
-package ss04_Access_modififier.bai_tap.Circle;
+package ss05_Inheritance.bai_tap.Circle;
 
-public class MainCircle {
+public class TestCircle {
     public static void main(String[] args) {
         Circle circle = new Circle();
-        circle = new Circle(5, "red");
+        circle = new Circle(5,"red");
         System.out.println(circle);
     }
 }

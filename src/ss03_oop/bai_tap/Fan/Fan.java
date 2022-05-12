@@ -80,16 +80,5 @@ public class Fan {
                     '}';
         }
     }
-//    public String toString() {
-//        String state = "";
-//        if (this.isOn()) {
-//            state += ("fan is on");
-//            state += (" Speed: " + this.speed);
-//        } else {
-//            state += ("fan is off");
-//        }
-//        state += (" Color: " + this.color);
-//        state += (" Radius: " + this.radius);
-//        return state;
-//    }
+
 }
