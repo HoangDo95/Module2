@@ -1,7 +1,7 @@
 package ss05_Inheritance.bai_tap.Point;
 
 public class Point3D extends Point2D {
-    float z = 0.0f;
+    private float z = 0.0f;
 
     public Point3D(float z) {
         this.z = z;
@@ -25,22 +25,22 @@ public class Point3D extends Point2D {
     }
 
     public void setXYZ(float x, float y, float z) {
-        this.x = x;
-        this.y = y;
+        this.setX(x);
+        this.setY(y);
         this.z = z;
     }
 
     public float[] getXYZ() {
-        float arr[] = {this.x, this.y, this.z};
+        float arr[] = {this.getX(), this.getY(), this.z};
         return arr;
     }
 
     @Override
     public String toString() {
-        return "Point3D{" +
-                "x=" + x +
-                ", y=" + y +
+        return "Point3D(" +
+                "x=" + getX() +
+                ", y=" + getY() +
                 ", z=" + z +
-                '}';
+                ')';
     }
 }

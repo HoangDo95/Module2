@@ -1,8 +1,8 @@
 package ss05_Inheritance.bai_tap.Point;
 
 public class Point2D {
-    float x = 0.0f;
-    float y = 0.0f;
+    private float x = 0.0f;
+    private float y = 0.0f;
 
     public Point2D(float x, float y) {
         this.x = x;
@@ -41,9 +41,9 @@ public class Point2D {
 
     @Override
     public String toString() {
-        return "Point2D{" +
+        return "Point2D(" +
                 "x=" + x +
                 ", y=" + y +
-                '}';
+                ')';
     }
 }
