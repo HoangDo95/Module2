@@ -46,10 +46,12 @@ public class Main {
     public static void deleteProduct() {
         System.out.println("Nhập vị trí id cần xóa: ");
         int inputId = Integer.parseInt(scanner.nextLine());
-        for (int i = 0; i < productList.length; i++) {
-            if (productList[i] != null && productList[i].getId() == inputId) {
-                productList[i] = productList[i + 1];
+        productList[inputId] = null;
+        for (Product index : productList) {
+            if (index == null) {
+                continue;
             }
+            System.out.println(index);
         }
     }
 

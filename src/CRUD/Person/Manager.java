@@ -32,7 +32,7 @@ public class Manager {
                 System.out.println("Nhập Salary: ");
                 Double salary = Double.parseDouble(scanner.nextLine());
                 Teacher teacher = new Teacher(id, name, age, gender, salary);
-                person[count] = (Teacher) teacher;
+                person[count] = teacher;
                 count++;
                 displayList();
                 break;
@@ -48,7 +48,7 @@ public class Manager {
                 System.out.println("Nhập Point: ");
                 Double point = Double.parseDouble(scanner.nextLine());
                 Student student = new Student(id1, name1, age1, gender1, point);
-                person[count] = (Student) student;
+                person[count] = student;
                 count++;
                 displayList();
                 break;
@@ -66,28 +66,16 @@ public class Manager {
     }
 
     public static void deletePerson() {
-        System.out.println("Nhập vị trí id cần xóa: ");
-        int inputId = Integer.parseInt(scanner.nextLine());
-        for (int i = 0; i < person.length; i++) {
-            if (person[i] != null && person[i].getId() == inputId) {
-                person[i] = person[i + 1];
+        System.out.println("Nhập id cần xóa: ");
+        int idInput = Integer.parseInt(scanner.nextLine());
+        person[idInput] = null;
+        for (Person index : person) {
+            if (index == null) {
+                continue;
             }
+            System.out.println(index);
         }
     }
-
-//    public static void deletePerson() {
-//        System.out.println("Nhập id cần xóa: ");
-//        int idInput = Integer.parseInt(scanner.nextLine());
-//        for (Person item : person) {
-//            if (item != null && item.getId()== idInput) {
-//
-//                System.out.println(item);
-//            } else {
-//                System.out.println("Không tìm thấy");
-//                break;
-//            }
-//        }
-//    }
 
     public static void main(String[] args) {
         do {
