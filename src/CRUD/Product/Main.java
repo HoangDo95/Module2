@@ -1,4 +1,4 @@
-package CRUD;
+package CRUD.Product;
 
 import java.util.Scanner;
 
