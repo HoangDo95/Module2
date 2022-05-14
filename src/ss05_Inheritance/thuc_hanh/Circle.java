@@ -1,7 +1,5 @@
 package ss05_Inheritance.thuc_hanh;
 
-import ss05_Inheritance.thuc_hanh.Shape;
-
 public class Circle extends Shape {
     private double radius = 1.0;
 
