@@ -1,13 +1,14 @@
 package CRUD.Person;
 
-public class Student extends Person{
+public class Student extends Person {
     private double point;
 
-    public Student(int id, String name, int age, String gender,double point) {
+    public Student(int id, String name, int age, String gender, double point) {
         super(id, name, age, gender);
         this.point = point;
     }
-    public Student(){
+
+    public Student() {
 
     }
 
@@ -21,6 +22,6 @@ public class Student extends Person{
 
     @Override
     public String toString() {
-        return "Student: " + "id=" + getId() + ", name=" + getName() + ", age=" + getAge() + ", gender= " + getGender() +", salary= " + this.point;
+        return "Student: " + "id=" + getId() + ", name=" + getName() + ", age=" + getAge() + ", gender= " + getGender() + ", salary= " + this.point;
     }
 }

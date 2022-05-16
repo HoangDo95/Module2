@@ -12,7 +12,8 @@ public class Person {
         this.age = age;
         this.gender = gender;
     }
-    public Person(){
+
+    public Person() {
 
     }
 
