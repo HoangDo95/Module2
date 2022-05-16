@@ -1,5 +1,5 @@
 package ss06_abstraction.thuc_hanh.CircleComparator;
-import ss05_Inheritance.thuc_hanh.Circle;
+import ss05_inheritance.thuc_hanh.Circle;
 
 import java.util.Arrays;
 import java.util.Comparator;
