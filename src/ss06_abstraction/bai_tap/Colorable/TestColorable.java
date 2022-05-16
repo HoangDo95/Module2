@@ -8,7 +8,7 @@ public class TestColorable {
         for (Shape value : shape) {
             System.out.println(value);
             if (value instanceof Square) {
-                ((Square) value).howToColor();
+
             }
         }
     }
