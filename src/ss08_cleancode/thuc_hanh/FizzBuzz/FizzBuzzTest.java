@@ -1,4 +1,4 @@
-package ss07_cleancode.thuc_hanh.FizzBuzz;
+package ss08_cleancode.thuc_hanh.FizzBuzz;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

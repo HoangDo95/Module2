@@ -1,4 +1,4 @@
-package ss07_cleancode.thuc_hanh.Caculator;
+package ss08_cleancode.thuc_hanh.Caculator;
 
 public class RenameVariable {
     public static int calculate(int firstOperand, int secondOperand, char operator) {

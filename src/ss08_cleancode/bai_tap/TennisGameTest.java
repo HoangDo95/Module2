@@ -1,4 +1,4 @@
-package ss07_cleancode.bai_tap;
+package ss08_cleancode.bai_tap;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
