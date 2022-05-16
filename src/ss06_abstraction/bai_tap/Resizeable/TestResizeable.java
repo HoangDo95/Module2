@@ -12,7 +12,7 @@ public class TestResizeable {
         }
         System.out.println("List shape after: ");
         for (Shape value : shape) {
-            ((Resizeable) value).resize(Math.random() * 100 / 10);
+            ((Resizeable) value).resize(Math.random() * 100);
             System.out.println(value);
         }
     }
