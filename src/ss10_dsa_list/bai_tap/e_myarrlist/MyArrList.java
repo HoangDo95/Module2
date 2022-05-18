@@ -111,5 +111,4 @@ public class MyArrList<E> {
             elements[i] = null;
         }
     }
-
 }
