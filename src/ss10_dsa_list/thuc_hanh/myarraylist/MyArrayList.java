@@ -1,10 +1,11 @@
 package ss10_dsa_list.thuc_hanh.myarraylist;
 import java.util.Arrays;
 public class MyArrayList<E> {
+
     /**
      * Số lượng phần tử trong MyArrayList
      */
-    private int size = 0;
+    public int size = 0;
 
     /**
      * Sức chứa mặc định trong MyArraylist
@@ -14,7 +15,7 @@ public class MyArrayList<E> {
     /**
      * mảng đối tượng elements chứa các phần tử trong MyArrayList
      */
-    private Object[] elements;
+    public Object[] elements;
 
 
     /**

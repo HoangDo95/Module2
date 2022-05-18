@@ -1,11 +1,11 @@
 package ss10_dsa_list.thuc_hanh.myarraylist;
 
 public class TestMyArrayList {
-    static class Person{
-        String name;
-        int Age;
+    public static class Person{
+        public String name;
+        public int Age;
 
-        Person(String name, int age) {
+        public Person(String name, int age) {
             this.name = name;
             Age = age;
         }
@@ -20,7 +20,6 @@ public class TestMyArrayList {
 
         @Override
         public boolean equals(Object obj) {
-//            Person person = (Person) obj;
             return this.name.equals(((Person) obj).name)
                     && this.Age == ((Person) obj).Age;
         }
