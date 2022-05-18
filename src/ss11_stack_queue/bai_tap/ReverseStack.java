@@ -6,6 +6,7 @@ public class ReverseStack {
     ReverseStack reverseStack = new ReverseStack();
 
     public static void main(String[] args) {
+
         int number = 12345;
 
         System.out.println(reverse_number(number));
@@ -34,5 +35,6 @@ public class ReverseStack {
         }
 
         return reverse;
+
     }
 }
