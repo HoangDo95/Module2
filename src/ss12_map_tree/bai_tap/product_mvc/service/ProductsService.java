@@ -1,6 +1,7 @@
 package ss12_map_tree.bai_tap.product_mvc.service;
 
 import ss12_map_tree.bai_tap.product_mvc.model.Products;
+import ss12_map_tree.bai_tap.product_mvc.util.SortPriceAscendingComparator;
 
 import java.util.*;
 
@@ -84,13 +85,14 @@ public class ProductsService implements IProductsService {
     }
 
     public void sortUp() {
-        Collections.sort(productsList, new Comparator<Products>() {
-            @Override
-            public int compare(Products o1, Products o2) {
-                return (int) (o1.getPrice() - o2.getPrice());
-            }
-        });
+        Collections.sort(productsList, new SortPriceAscendingComparator());
+        System.out.println("DS");
+        for (Products item :
+                productsList) {
+            System.out.println(item);
+        }
     }
+
 
     public void sortDescending() {
         Collections.sort(productsList, new Comparator<Products>() {
