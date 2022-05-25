@@ -121,20 +121,20 @@ public class FuramaControllers {
     }
 
     public static void bookingManagement() {
-        System.out.println("1.\tAdd new booking 2.\tDisplay list booking 3.\tCreate new constracts 4.\tDisplay list contracts 5.\tEdit contracts 6.\tReturn main menu");
+        System.out.println("1.\tAdd new booking 2.\tDisplay list booking 3.\tCreate new contracts 4.\tDisplay list contracts 5.\tEdit contracts 6.\tReturn main menu");
         int choose4 = Integer.parseInt(scanner.nextLine());
         switch (choose4) {
             case 1:
-                System.out.println("1\tDisplay list facility");
+                System.out.println("1\tAdd new booking");
                 break;
             case 2:
-                System.out.println("2\tAdd new facility");
+                System.out.println("2\tDisplay list booking");
                 break;
             case 3:
-                System.out.println("3\tDisplay list facility maintenance");
+                System.out.println("3\tCreate new contracts");
                 break;
             case 4:
-                System.out.println("4\tReturn main menu");
+                System.out.println("4\tDisplay list contracts");
                 break;
             case 5:
                 System.out.println("5.\tEdit contracts");

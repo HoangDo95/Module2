@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class FacilityServiceImpl implements IFacilityService {
     private static Map<Facility,Integer> facilityIntegerMap = new LinkedHashMap<>();
     private static Scanner scanner = new Scanner(System.in);
-
+    private int cout = 0;
     @Override
     public void display() {
 
@@ -46,8 +46,9 @@ public class FacilityServiceImpl implements IFacilityService {
         System.out.println("Số tầng: ");
         int floor = Integer.parseInt(scanner.nextLine());
         Villa villa = new Villa(idFacility,serviceName,usableArea,rentalCosts,maxNumberOfPeople,roomType,poolArea,floor);
-        facilityIntegerMap.put(villa,0);
+        facilityIntegerMap.put(villa,cout);
         System.out.println("Thêm thành công");
+
     }
 
     @Override
