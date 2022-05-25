@@ -11,5 +11,11 @@ public interface IProductsService {
 
     public void updateProductsListById();
 
+<<<<<<< HEAD
 
+=======
+    public void sortUp();
+
+    public void sortDescending();
+>>>>>>> origin/main
 }

@@ -15,7 +15,11 @@ public class Customer extends Person{
         return classify;
     }
 
+<<<<<<< HEAD
     public void setTypeCustomer(String classify) {
+=======
+    public void setClassify(String classify) {
+>>>>>>> origin/main
         this.classify = classify;
     }
 

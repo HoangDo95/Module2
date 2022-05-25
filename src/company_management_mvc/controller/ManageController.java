@@ -11,7 +11,11 @@ public class ManageController {
 
     public static void managePerson() {
         do {
+<<<<<<< HEAD
             System.out.println("1. DS Array 2. DS ArrayList 3. DS LinkedList 4. Sort 5. DS Map 6. Exit");
+=======
+            System.out.println("1. Theo Array 2. Theo ArrayList 3. Theo LinkedList 4. Sort 5. Exit");
+>>>>>>> origin/main
             int choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
                 case 1:
@@ -37,7 +41,10 @@ public class ManageController {
                     break;
                 case 5:
                     manageService.displayMap();
+<<<<<<< HEAD
                     break;
+=======
+>>>>>>> origin/main
                 case 6:
                     System.exit(0);
             }

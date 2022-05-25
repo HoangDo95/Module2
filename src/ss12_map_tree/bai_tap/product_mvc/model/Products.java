@@ -16,7 +16,10 @@ public class Products {
     }
 
     public Products() {
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
     }
 
     public int getId() {

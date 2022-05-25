@@ -37,9 +37,17 @@ public class EmployeeServiceImpl implements EmployeeService {
         String gender = scanner.nextLine();
         switch (gender) {
             case "1":
+<<<<<<< HEAD
                 System.out.println("Nam");
                 break;
             case "2":
+=======
+                gender = "Nam";
+                System.out.println("Nam");
+                break;
+            case "2":
+                gender = "Nữ";
+>>>>>>> origin/main
                 System.out.println("Nữ");
                 break;
         }
@@ -53,6 +61,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         String level = scanner.nextLine();
         switch (level) {
             case "1":
+<<<<<<< HEAD
                 System.out.println("Trung câp");
                 break;
             case "2":
@@ -62,6 +71,21 @@ public class EmployeeServiceImpl implements EmployeeService {
                 System.out.println("Đại học");
                 break;
             case "4":
+=======
+                level = "Trung câp";
+                System.out.println("Trung câp");
+                break;
+            case "2":
+                level = "Cao đẳng";
+                System.out.println("Cao đẳng");
+                break;
+            case "3":
+                level = "Đại học";
+                System.out.println("Đại học");
+                break;
+            case "4":
+                level = "Sau đại học";
+>>>>>>> origin/main
                 System.out.println("Sau đại học");
                 break;
         }
@@ -69,6 +93,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         String workingPosition = scanner.nextLine();
         switch (workingPosition) {
             case "1":
+<<<<<<< HEAD
                 System.out.println("Lễ tân");
                 break;
             case "2":
@@ -78,6 +103,21 @@ public class EmployeeServiceImpl implements EmployeeService {
                 System.out.println("Quản lý");
                 break;
             case "4":
+=======
+                workingPosition = "Lễ tân";
+                System.out.println("Lễ tân");
+                break;
+            case "2":
+                workingPosition = "Phục vụ";
+                System.out.println("Phục vụ");
+                break;
+            case "3":
+                workingPosition = "Quản lý";
+                System.out.println("Quản lý");
+                break;
+            case "4":
+                workingPosition = "Giám đốc";
+>>>>>>> origin/main
                 System.out.println("Giám đốc");
                 break;
         }
@@ -105,9 +145,17 @@ public class EmployeeServiceImpl implements EmployeeService {
                 String gender = scanner.nextLine();
                 switch (gender) {
                     case "1":
+<<<<<<< HEAD
                         System.out.println("Nam");
                         break;
                     case "2":
+=======
+                        gender = "Nam";
+                        System.out.println("Nam");
+                        break;
+                    case "2":
+                        gender = "Nữ";
+>>>>>>> origin/main
                         System.out.println("Nữ");
                         break;
                 }
@@ -121,6 +169,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                 String level = scanner.nextLine();
                 switch (level) {
                     case "1":
+<<<<<<< HEAD
                         System.out.println("Trung câp");
                         break;
                     case "2":
@@ -130,6 +179,21 @@ public class EmployeeServiceImpl implements EmployeeService {
                         System.out.println("Đại học");
                         break;
                     case "4":
+=======
+                        level = "Trung câp";
+                        System.out.println("Trung câp");
+                        break;
+                    case "2":
+                        level = "Cao đẳng";
+                        System.out.println("Cao đẳng");
+                        break;
+                    case "3":
+                        level = "Đại học";
+                        System.out.println("Đại học");
+                        break;
+                    case "4":
+                        level = "Sau đại học";
+>>>>>>> origin/main
                         System.out.println("Sau đại học");
                         break;
                 }
@@ -137,6 +201,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                 String workingPosition = scanner.nextLine();
                 switch (workingPosition) {
                     case "1":
+<<<<<<< HEAD
                         System.out.println("Lễ tân");
                         break;
                     case "2":
@@ -146,6 +211,21 @@ public class EmployeeServiceImpl implements EmployeeService {
                         System.out.println("Quản lý");
                         break;
                     case "4":
+=======
+                        workingPosition = "Lễ tân";
+                        System.out.println("Lễ tân");
+                        break;
+                    case "2":
+                        workingPosition = "Phục vụ";
+                        System.out.println("Phục vụ");
+                        break;
+                    case "3":
+                        workingPosition = "Quản lý";
+                        System.out.println("Quản lý");
+                        break;
+                    case "4":
+                        workingPosition = "Giám đốc";
+>>>>>>> origin/main
                         System.out.println("Giám đốc");
                         break;
                 }
@@ -161,10 +241,17 @@ public class EmployeeServiceImpl implements EmployeeService {
                 employeeList.get(i).setLevel(level);
                 employeeList.get(i).setWorkingPosition(workingPosition);
                 employeeList.get(i).setSalary(salary);
+<<<<<<< HEAD
                 System.out.println("Cập nhật thành công");
                 displayListEmployees();
             }
         }
+=======
+
+            }
+        }
+        System.out.println("Cập nhật thành công");
+>>>>>>> origin/main
     }
 }
 

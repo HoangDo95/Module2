@@ -36,9 +36,17 @@ public class CustomerServiceImpl implements CustomerService {
         String gender = scanner.nextLine();
         switch (gender) {
             case "1":
+<<<<<<< HEAD
                 System.out.println("Nam");
                 break;
             case "2":
+=======
+                gender = "Nam";
+                System.out.println("Nam");
+                break;
+            case "2":
+                gender = "Nữ";
+>>>>>>> origin/main
                 System.out.println("Nữ");
                 break;
         }
@@ -50,6 +58,7 @@ public class CustomerServiceImpl implements CustomerService {
         String type = scanner.nextLine();
         switch (type) {
             case "1":
+<<<<<<< HEAD
                 System.out.println("Diamond");
                 break;
             case "2":
@@ -66,6 +75,29 @@ public class CustomerServiceImpl implements CustomerService {
                 break;
         }
         Customer customer = new Customer(id, name, dayOfBirt, gender, address, phoneNumber,type);
+=======
+                type = "Diamond";
+                System.out.println("Diamond");
+                break;
+            case "2":
+                type = "Platinium";
+                System.out.println("Platinium");
+                break;
+            case "3":
+                type = "Gold";
+                System.out.println("Gold");
+                break;
+            case "4":
+                type = "Silver";
+                System.out.println("Silver");
+                break;
+            case "5":
+                type = "Member";
+                System.out.println("Member");
+                break;
+        }
+        Customer customer = new Customer(id, name, dayOfBirt, gender, address, phoneNumber, type);
+>>>>>>> origin/main
         customerList.add(customer);
         System.out.println("Thêm thành công");
         displayListCustomer();
@@ -88,9 +120,17 @@ public class CustomerServiceImpl implements CustomerService {
                 String gender = scanner.nextLine();
                 switch (gender) {
                     case "1":
+<<<<<<< HEAD
                         System.out.println("Nam");
                         break;
                     case "2":
+=======
+                        gender = "Nam";
+                        System.out.println("Nam");
+                        break;
+                    case "2":
+                        gender = "Nữ";
+>>>>>>> origin/main
                         System.out.println("Nữ");
                         break;
                 }
@@ -99,6 +139,7 @@ public class CustomerServiceImpl implements CustomerService {
                 System.out.println("Nhập số điện thoại: ");
                 int phoneNumber = Integer.parseInt(scanner.nextLine());
                 System.out.println("Loại khách hàng : 1.Diamond 2.Platinium 3.Gold 4.Silver 5.Member");
+<<<<<<< HEAD
                 String type = scanner.nextLine();
                 switch (type) {
                     case "1":
@@ -128,5 +169,39 @@ public class CustomerServiceImpl implements CustomerService {
             System.out.println("Cập nhật thành công");
 
         }
+=======
+                String classify = scanner.nextLine();
+                switch (classify) {
+                    case "1":
+                        classify = "Diamond";
+                        System.out.println("Diamond");
+                        break;
+                    case "2":
+                        classify = "Platinium";
+                        System.out.println("Platinium");
+                        break;
+                    case "3":
+                        classify = "Gold";
+                        System.out.println("Gold");
+                        break;
+                    case "4":
+                        classify = "Silver";
+                        System.out.println("Silver");
+                        break;
+                    case "5":
+                        classify = "Member";
+                        System.out.println("Member");
+                        break;
+                }
+                customerList.get(i).setId(id);
+                customerList.get(i).setName(name);
+                customerList.get(i).setDayOfBirth(dayOfBirt);
+                customerList.get(i).setGender(gender);
+                customerList.get(i).setAddress(address);
+                customerList.get(i).setPhoneNumber(phoneNumber);
+                customerList.get(i).setClassify(classify);
+            }
+        }System.out.println("Cập nhật thành công");
+>>>>>>> origin/main
     }
 }

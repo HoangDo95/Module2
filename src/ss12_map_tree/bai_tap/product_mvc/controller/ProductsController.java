@@ -3,11 +3,19 @@ package ss12_map_tree.bai_tap.product_mvc.controller;
 import ss12_map_tree.bai_tap.product_mvc.service.IProductsService;
 import ss12_map_tree.bai_tap.product_mvc.service.ProductsService;
 
+<<<<<<< HEAD
 import java.util.Scanner;
 
 public class ProductsController {
 
     public static void main(String[] args) {
+=======
+import java.util.Collections;
+import java.util.Scanner;
+
+public class ProductsController {
+    public static void menu() {
+>>>>>>> origin/main
         Scanner scanner = new Scanner(System.in);
         IProductsService productsService = new ProductsService();
         do {
@@ -17,7 +25,12 @@ public class ProductsController {
             System.out.println("3. Search Product");
             System.out.println("4. Delete Product");
             System.out.println("5. Update Product");
+<<<<<<< HEAD
             System.out.println("6. Exit");
+=======
+            System.out.println("6. Sort Product");
+            System.out.println("7. Exit");
+>>>>>>> origin/main
             System.out.println("Choose option: ");
             int choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
@@ -42,9 +55,29 @@ public class ProductsController {
                     productsService.updateProductsListById();
                     break;
                 case 6:
+<<<<<<< HEAD
+=======
+                    System.out.println("1.SortUp 2.SortDescending");
+                    int choose1 = Integer.parseInt(scanner.nextLine());
+                    switch (choose1) {
+                        case 1:
+                            productsService.sortUp();
+                            System.out.println("Sort Up Done");
+                            break;
+                        case 2:
+                            productsService.sortDescending();
+                            System.out.println("Sort Descending Done");
+                            break;
+                    }
+                    break;
+                case 7:
+>>>>>>> origin/main
                     System.exit(0);
             }
         } while (true);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
 }
