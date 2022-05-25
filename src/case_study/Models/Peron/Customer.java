@@ -1,28 +1,34 @@
 package case_study.Models.Peron;
 
 public class Customer extends Person{
-    private String typeCustomer;
+    private String classify;
 
     public Customer() {
     }
 
-    public Customer(int id, String name, int dayOfBirth, String gender, String address, int phoneNumber, String typeCustomer) {
-        super(id, name, dayOfBirth, gender, address, phoneNumber);
-        this.typeCustomer = typeCustomer;
+    public Customer(int id, String name, String dayOfBirth, String gender, String address, int phoneNumber, String classify) {
+        super(name, dayOfBirth, gender, id, address, phoneNumber);
+        this.classify = classify;
     }
 
-    public String getTypeCustomer() {
-        return typeCustomer;
+    public String getClassify() {
+        return classify;
     }
 
-    public void setTypeCustomer(String typeCustomer) {
-        this.typeCustomer = typeCustomer;
+    public void setTypeCustomer(String classify) {
+        this.classify = classify;
     }
 
     @Override
     public String toString() {
         return "Customer{" +
-                "typeCustomer='" + typeCustomer + '\'' +
+                "id=" + getId() +
+                ", name='" + getName() + '\'' +
+                ", dayOfBirth=" + getDayOfBirth() +
+                ", gender='" + getGender() + '\'' +
+                ", address='" + getAddress() + '\'' +
+                ", phoneNumber=" + getPhoneNumber() +
+                ", typeCustomer='" + classify + '\'' +
                 '}';
     }
 }
