@@ -21,7 +21,7 @@ public class IllegalTriangleException {
                     throw new MyException("Tổng 2 cạnh không lớn hơn cạnh còn lại");
                 }
             } catch (MyException e) {
-                System.out.println("vui lòng nhập lại: ");
+                System.out.println("vui lòng nhập lại  : ");
                 check = true;
             }
         } while (check);
