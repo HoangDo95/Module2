@@ -3,7 +3,7 @@ package case_study.Models.Peron;
 public abstract class Person {
     private int id;
     private String name;
-    private int dayOfBirth;
+    private String dayOfBirth;
     private String gender;
     private String address;
     private int phoneNumber;
@@ -12,7 +12,7 @@ public abstract class Person {
 
     }
 
-    public Person(int id, String name, int dayOfBirth, String gender, String address,int phoneNumber) {
+    public Person(String name, String dayOfBirth, String gender, int id, String address, int phoneNumber) {
         this.id = id;
         this.name = name;
         this.dayOfBirth = dayOfBirth;
@@ -37,11 +37,11 @@ public abstract class Person {
         this.name = name;
     }
 
-    public int getDayOfBirth() {
+    public String getDayOfBirth() {
         return dayOfBirth;
     }
 
-    public void setDayOfBirth(int dayOfBirth) {
+    public void setDayOfBirth(String dayOfBirth) {
         this.dayOfBirth = dayOfBirth;
     }
 
