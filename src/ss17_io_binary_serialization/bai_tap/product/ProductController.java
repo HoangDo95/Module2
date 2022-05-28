@@ -1,4 +1,4 @@
-package ss17_io_binary_serialization.bai_tap;
+package ss17_io_binary_serialization.bai_tap.product;
 
 import java.io.IOException;
 import java.util.ArrayList;

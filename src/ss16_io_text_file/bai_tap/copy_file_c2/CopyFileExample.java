@@ -7,8 +7,8 @@ public class CopyFileExample {
         OutputStream outStream = null;
 
         try {
-            inStream = new FileInputStream(new File("src/ss16_steam/bai_tap/copy_file/file1.csv"));
-            outStream = new FileOutputStream(new File("src/ss16_steam/bai_tap/copy_file/file2.csv"));
+            inStream = new FileInputStream(new File("src/ss16_steam/bai_tap/copy_file/source.csv"));
+            outStream = new FileOutputStream(new File("src/ss16_steam/bai_tap/copy_file/dest.csv"));
 
             int length;
             byte[] buffer = new byte[1024];
