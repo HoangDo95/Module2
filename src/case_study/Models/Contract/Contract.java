@@ -1,60 +1,63 @@
 package case_study.Models.Contract;
 
+import case_study.Models.Booking.Booking;
+import case_study.Models.Peron.Customer;
+
 public class Contract {
-    private int idContract;
-    private int idBooking;
-    private double deposit;
-    private double paymentAmount;
-    private int idCustomer;
+    private String idContract;
+    private Booking idBooking;
+    private String prepay; // trả trước
+    private String paymentAmount;// trả hết
+    private Customer idCustomer;
 
     public Contract() {
     }
 
-    public Contract(int idContract, int idBooking, double deposit, double paymentAmount, int idCustomer) {
+    public Contract(String idContract, Booking idBooking, String prepay, String paymentAmount, Customer idCustomer) {
         this.idContract = idContract;
         this.idBooking = idBooking;
-        this.deposit = deposit;
+        this.prepay = prepay;
         this.paymentAmount = paymentAmount;
         this.idCustomer = idCustomer;
     }
 
-    public int getIdContract() {
+    public String getIdContract() {
         return idContract;
     }
 
-    public void setIdContract(int idContract) {
+    public void setIdContract(String idContract) {
         this.idContract = idContract;
     }
 
-    public int getIdBooking() {
+    public Booking getIdBooking() {
         return idBooking;
     }
 
-    public void setIdBooking(int idBooking) {
+    public void setIdBooking(Booking idBooking) {
         this.idBooking = idBooking;
     }
 
-    public double getDeposit() {
-        return deposit;
+    public String getPrepay() {
+        return prepay;
     }
 
-    public void setDeposit(double deposit) {
-        this.deposit = deposit;
+    public void setPrepay(String prepay) {
+        this.prepay = prepay;
     }
 
-    public double getPaymentAmount() {
+    public String getPaymentAmount() {
         return paymentAmount;
     }
 
-    public void setPaymentAmount(double paymentAmount) {
+    public void setPaymentAmount(String paymentAmount) {
         this.paymentAmount = paymentAmount;
     }
 
-    public int getIdCustomer() {
+    public Customer getIdCustomer() {
         return idCustomer;
     }
 
-    public void setIdCustomer(int idCustomer) {
+    public void setIdCustomer(Customer idCustomer) {
         this.idCustomer = idCustomer;
     }
 
@@ -63,7 +66,7 @@ public class Contract {
         return "Contract{" +
                 "idContract=" + idContract +
                 ", idBooking=" + idBooking +
-                ", deposit=" + deposit +
+                ", deposit=" + prepay +
                 ", paymentAmount=" + paymentAmount +
                 ", idCustomer=" + idCustomer +
                 '}';

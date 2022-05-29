@@ -1,7 +1,7 @@
 package case_study.Models.Peron;
 
 public class Customer extends Person{
-    private String classify;
+    private String classify; //loại khách hàng
 
     public Customer() {
     }

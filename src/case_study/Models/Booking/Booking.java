@@ -1,82 +1,85 @@
 package case_study.Models.Booking;
 
+import case_study.Models.Facility.Facility;
+import case_study.Models.Peron.Customer;
+
 public class Booking {
-    private int idBooking;
-    private String dayStart;
-    private String dayEnd;
-    private int idCustomer;
-    private String nameService;
-    private String typeService;
+    private Integer idBooking;
+    private String starDate;
+    private String endDate;
+    private Customer customer;
+    private Facility facility;
 
     public Booking() {
     }
 
-    public Booking(int idBooking, String dayStart, String dayEnd, int idCustomer, String nameService, String typeService) {
+    public Booking(Integer idBooking, String starDate, String endDate, Customer customer, Facility facility) {
         this.idBooking = idBooking;
-        this.dayStart = dayStart;
-        this.dayEnd = dayEnd;
-        this.idCustomer = idCustomer;
-        this.nameService = nameService;
-        this.typeService = typeService;
+        this.starDate = starDate;
+        this.endDate = endDate;
+        this.customer = customer;
+        this.facility = facility;
     }
 
-    public int getIdBooking() {
+    public Integer getIdBooking() {
         return idBooking;
     }
 
-    public void setIdBooking(int idBooking) {
+    public void setIdBooking(Integer idBooking) {
         this.idBooking = idBooking;
     }
 
-    public String getDayStart() {
-        return dayStart;
+    public String getStarDate() {
+        return starDate;
     }
 
-    public void setDayStart(String dayStart) {
-        this.dayStart = dayStart;
+    public void setStarDate(String starDate) {
+        this.starDate = starDate;
     }
 
-    public String getDayEnd() {
-        return dayEnd;
+    public String getEndDate() {
+        return endDate;
     }
 
-    public void setDayEnd(String dayEnd) {
-        this.dayEnd = dayEnd;
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
 
-    public int getIdCustomer() {
-        return idCustomer;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setIdCustomer(int idCustomer) {
-        this.idCustomer = idCustomer;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
-    public String getNameService() {
-        return nameService;
+    public Facility getFacility() {
+        return facility;
     }
 
-    public void setNameService(String nameService) {
-        this.nameService = nameService;
-    }
-
-    public String getTypeService() {
-        return typeService;
-    }
-
-    public void setTypeService(String typeService) {
-        this.typeService = typeService;
+    public void setFacility(Facility facility) {
+        this.facility = facility;
     }
 
     @Override
     public String toString() {
         return "Booking{" +
                 "idBooking=" + idBooking +
-                ", dayStart=" + dayStart +
-                ", dayEnd=" + dayEnd +
-                ", idCustomer=" + idCustomer +
-                ", nameService='" + nameService + '\'' +
-                ", typeService='" + typeService + '\'' +
+                ", starDate='" + starDate + '\'' +
+                ", endDate='" + endDate + '\'' +
+                ", customer=" + customer +
+                ", facility=" + facility +
                 '}';
     }
+
+//    @Override
+//    public static String toString() {
+//        return "Booking{" +
+//                "idBooking=" + idBooking +
+//                ", starDate='" + starDate + '\'' +
+//                ", endDate='" + endDate + '\'' +
+//                ", customer=" + customer.getId() +
+//                ", facility=" + facility.getIdFacility() +
+//                '}';
+//    }
 }

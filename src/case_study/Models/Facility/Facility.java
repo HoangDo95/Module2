@@ -1,7 +1,7 @@
 package case_study.Models.Facility;
 
-public abstract class Facility {
-    private int idFacility;
+public class Facility {
+    private String idFacility;
     private String serviceName ;
     private int usableArea;
     private double rentalCosts;
@@ -9,7 +9,7 @@ public abstract class Facility {
     public Facility(){
 
     }
-    public Facility(int idFacility,String serviceName, int usableArea, double rentalCosts, int maxNumberOfPeople) {
+    public Facility(String idFacility, String serviceName, int usableArea, double rentalCosts, int maxNumberOfPeople) {
         this.idFacility = idFacility;
         this.serviceName = serviceName;
         this.usableArea = usableArea;
@@ -17,11 +17,11 @@ public abstract class Facility {
         this.maxNumberOfPeople = maxNumberOfPeople;
     }
 
-    public int getIdFacility() {
+    public String getIdFacility() {
         return idFacility;
     }
 
-    public void setIdFacility(int idFacility) {
+    public void setIdFacility(String idFacility) {
         this.idFacility = idFacility;
     }
 

@@ -30,7 +30,7 @@ public class FacilityServiceImpl implements IFacilityService {
     @Override
     public void addNewVilla() {
         System.out.println("Nhập id: ");
-        int idFacility = Integer.parseInt(scanner.nextLine());
+        String idFacility = scanner.nextLine();
         System.out.println("Nhập tên: ");
         String serviceName = scanner.nextLine();
         System.out.println("Diện tích: ");
@@ -54,7 +54,7 @@ public class FacilityServiceImpl implements IFacilityService {
     @Override
     public void addNewHouse() {
         System.out.println("Nhập id: ");
-        int idFacility = Integer.parseInt(scanner.nextLine());
+        String idFacility = scanner.nextLine();
         System.out.println("Nhập tên: ");
         String serviceName = scanner.nextLine();
         System.out.println("Diện tích: ");
@@ -75,7 +75,7 @@ public class FacilityServiceImpl implements IFacilityService {
     @Override
     public void addNewRoom() {
         System.out.println("Nhập id: ");
-        int idFacility = Integer.parseInt(scanner.nextLine());
+        String idFacility = scanner.nextLine();
         System.out.println("Nhập tên: ");
         String serviceName = scanner.nextLine();
         System.out.println("Diện tích: ");

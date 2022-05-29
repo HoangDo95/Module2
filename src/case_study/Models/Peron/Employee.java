@@ -2,8 +2,8 @@ package case_study.Models.Peron;
 
 public class Employee extends Person{
     private String email;
-    private String level;
-    private String workingPosition;
+    private String level; // trình độ
+    private String workingPosition; // vị trí làm việc
     private double salary;
 
     public Employee() {
