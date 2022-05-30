@@ -26,57 +26,60 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void addNewCustomer() {
-        System.out.println("Nhập id: ");
-        int id = Integer.parseInt(scanner.nextLine());
-        System.out.println("Nhập tên: ");
-        String name = scanner.nextLine();
-        System.out.println("Nhập ngày sinh: ");
-        String dayOfBirt = scanner.nextLine();
-        System.out.println("Giới tính: 1. Nam 2. Nữ");
-        String gender = scanner.nextLine();
-        switch (gender) {
-            case "1":
-                gender = "Nam";
-                System.out.println("Nam");
-                break;
-            case "2":
-                gender = "Nữ";
-                System.out.println("Nữ");
-                break;
+        try {
+            System.out.println("Nhập id: ");
+            int id = Integer.parseInt(scanner.nextLine());
+            System.out.println("Nhập tên: ");
+            String name = scanner.nextLine();
+            System.out.println("Nhập ngày sinh: ");
+            String dayOfBirt = scanner.nextLine();
+            System.out.println("Giới tính: 1. Nam 2. Nữ");
+            String gender = scanner.nextLine();
+            switch (gender) {
+                case "1":
+                    gender = "Nam";
+                    System.out.println("Nam");
+                    break;
+                case "2":
+                    gender = "Nữ";
+                    System.out.println("Nữ");
+                    break;
+            }
+            System.out.println("Nhập địa chỉ: ");
+            String address = scanner.nextLine();
+            System.out.println("Nhập số điện thoại: ");
+            int phoneNumber = Integer.parseInt(scanner.nextLine());
+            System.out.println("Loại khách hàng : 1.Diamond 2.Platinium 3.Gold 4.Silver 5.Member");
+            String type = scanner.nextLine();
+            switch (type) {
+                case "1":
+                    type = "Diamond";
+                    System.out.println("Diamond");
+                    break;
+                case "2":
+                    type = "Platinium";
+                    System.out.println("Platinium");
+                    break;
+                case "3":
+                    type = "Gold";
+                    System.out.println("Gold");
+                    break;
+                case "4":
+                    type = "Silver";
+                    System.out.println("Silver");
+                    break;
+                case "5":
+                    type = "Member";
+                    System.out.println("Member");
+                    break;
+            }
+            Customer customer = new Customer(id, name, dayOfBirt, gender, address, phoneNumber, type);
+            customerList.add(customer);
+            System.out.println("Thêm thành công");
+            displayListCustomer();
+        } catch (NumberFormatException e) {
+            System.out.println("vui lòng nhập số");
         }
-        System.out.println("Nhập địa chỉ: ");
-        String address = scanner.nextLine();
-        System.out.println("Nhập số điện thoại: ");
-        int phoneNumber = Integer.parseInt(scanner.nextLine());
-        System.out.println("Loại khách hàng : 1.Diamond 2.Platinium 3.Gold 4.Silver 5.Member");
-        String type = scanner.nextLine();
-        switch (type) {
-            case "1":
-                type = "Diamond";
-                System.out.println("Diamond");
-                break;
-            case "2":
-                type = "Platinium";
-                System.out.println("Platinium");
-                break;
-            case "3":
-                type = "Gold";
-                System.out.println("Gold");
-                break;
-            case "4":
-                type = "Silver";
-                System.out.println("Silver");
-                break;
-            case "5":
-                type = "Member";
-                System.out.println("Member");
-                break;
-        }
-        Customer customer = new Customer(id, name, dayOfBirt, gender, address, phoneNumber, type);
-        customerList.add(customer);
-        System.out.println("Thêm thành công");
-        displayListCustomer();
-
     }
 
     @Override
