@@ -1,9 +1,9 @@
 package case_study.service.Impl;
 
-import case_study.Controllers.FuramaControllers;
-import case_study.Models.Booking.Booking;
-import case_study.Models.Contract.Contract;
-import case_study.Models.Peron.Customer;
+import case_study.controllers.FuramaControllers;
+import case_study.models.booking.Booking;
+import case_study.models.contract.Contract;
+import case_study.models.person.Customer;
 import case_study.service.ContractService;
 
 import java.util.*;

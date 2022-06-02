@@ -1,4 +1,4 @@
-package case_study.Models.Facility;
+package case_study.models.facility;
 
 public class Villa extends Facility {
     private String roomType;

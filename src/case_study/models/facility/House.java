@@ -1,4 +1,4 @@
-package case_study.Models.Facility;
+package case_study.models.facility;
 
 public class House extends Facility {
     public String roomType;

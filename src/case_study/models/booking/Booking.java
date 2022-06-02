@@ -1,7 +1,7 @@
-package case_study.Models.Booking;
+package case_study.models.booking;
 
-import case_study.Models.Facility.Facility;
-import case_study.Models.Peron.Customer;
+import case_study.models.facility.Facility;
+import case_study.models.person.Customer;
 
 public class Booking {
     private Integer idBooking;

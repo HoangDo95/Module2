@@ -1,4 +1,4 @@
-package case_study.Models.Peron;
+package case_study.models.person;
 
 public class Employee extends Person{
     private String email;
@@ -7,6 +7,17 @@ public class Employee extends Person{
     private double salary;
 
     public Employee() {
+    }
+
+    @Override
+    public String getInfo() {
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s",super.getId(),
+                                                super.getName(),
+                                                super.getDayOfBirth(),
+                                                super.getGender(),
+                                                super.getAddress(),
+                                                super.getPhoneNumber(),
+                                                getEmail(),getLevel(),getWorkingPosition(),getSalary());
     }
 
     public Employee(int id, String name, String dayOfBirth, String gender, String address, int phoneNumber, String email, String level, String workingPosition, double salary) {

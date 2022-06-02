@@ -1,8 +1,8 @@
 package case_study.service;
 
-public interface BookingService {
-    public void addBooking();
+public interface BookingService{
+     void addBooking();
 
-    public void displayListBooking();
+     void displayListBooking();
 
 }

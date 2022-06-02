@@ -1,4 +1,4 @@
-package case_study.Controllers;
+package case_study.controllers;
 
 import case_study.service.*;
 import case_study.service.Impl.*;
@@ -20,17 +20,15 @@ public class FuramaControllers {
             System.out.println("1\tDisplay list employees 2\tAdd new employee 3\tEdit employee 4\tReturn main menu");
             try {
                 choose = Integer.parseInt(scanner.nextLine());
-
                 switch (choose) {
-
                     case 1:
-                        employeeService.displayListEmployees();
+                        employeeService.display();
                         break;
                     case 2:
-                        employeeService.addNewEmployees();
+                        employeeService.addNew();
                         break;
                     case 3:
-                        employeeService.editEmployees();
+                        employeeService.edit();
                         break;
                     case 4:
                         displayMainMenu();
@@ -40,6 +38,7 @@ public class FuramaControllers {
                 }
             } catch (NumberFormatException e) {
                 System.err.println("Vui lòng nhập số");
+                e.printStackTrace();
             }
         } while (true);
     }
@@ -53,15 +52,15 @@ public class FuramaControllers {
                 switch (choose) {
                     case 1:
                         System.out.println("1.\tDisplay list customers");
-                        customerService.displayListCustomer();
+                        customerService.display();
                         break;
                     case 2:
                         System.out.println("2.\tAdd new customer");
-                        customerService.addNewCustomer();
+                        customerService.addNew();
                         break;
                     case 3:
                         System.out.println("3.\tEdit customer");
-                        customerService.editCustomer();
+                        customerService.edit();
                         break;
                     case 4:
                         System.out.println("4\tReturn main menu");
@@ -87,7 +86,7 @@ public class FuramaControllers {
                 switch (choose) {
                     case 1:
                         System.out.println("1\tDisplay list facility");
-                        facilityService.display();
+                        facilityService.displayFacility();
                         break;
                     case 2:
                         addNewFacility();

@@ -1,9 +1,9 @@
 package case_study.service.Impl;
 
-import case_study.Models.Booking.Booking;
-import case_study.Models.Facility.Facility;
-import case_study.Models.Facility.Villa;
-import case_study.Models.Peron.Customer;
+import case_study.models.booking.Booking;
+import case_study.models.facility.Facility;
+import case_study.models.facility.Villa;
+import case_study.models.person.Customer;
 import case_study.service.BookingService;
 import case_study.util.BookingComparator;
 

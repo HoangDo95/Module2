@@ -1,4 +1,4 @@
-package case_study.Models.Peron;
+package case_study.models.person;
 
 public abstract class Person {
     private int id;
@@ -72,6 +72,7 @@ public abstract class Person {
     public String getGender() {
         return gender;
     }
+    public abstract String getInfo();
 
     @Override
     public String toString() {

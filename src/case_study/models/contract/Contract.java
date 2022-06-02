@@ -1,7 +1,7 @@
-package case_study.Models.Contract;
+package case_study.models.contract;
 
-import case_study.Models.Booking.Booking;
-import case_study.Models.Peron.Customer;
+import case_study.models.booking.Booking;
+import case_study.models.person.Customer;
 
 public class Contract {
     private String idContract;

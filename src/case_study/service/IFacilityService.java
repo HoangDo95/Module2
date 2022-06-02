@@ -1,13 +1,13 @@
 package case_study.service;
 
 public interface IFacilityService {
-    public void display();
+    void displayFacility();
 
-    public void displayMaintain();
+    void displayMaintain();
 
-    public void addNewVilla();
+    void addNewVilla();
 
-    public void addNewHouse();
+    void addNewHouse();
 
-    public void addNewRoom();
+    void addNewRoom();
 }
