@@ -1,5 +1,7 @@
 package case_study.models.facility;
 
+import java.util.Objects;
+
 public class Facility {
     private String idFacility;
     private String serviceName ;
@@ -66,5 +68,18 @@ public class Facility {
                 ", rentalCosts=" + rentalCosts +
                 ", maxNumberOfPeople=" + maxNumberOfPeople +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Facility facility = (Facility) o;
+        return Objects.equals(idFacility, facility.idFacility);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idFacility);
     }
 }

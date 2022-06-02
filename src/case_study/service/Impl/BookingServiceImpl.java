@@ -12,15 +12,15 @@ import java.util.*;
 public class BookingServiceImpl implements BookingService {
     static Scanner scanner = new Scanner(System.in);
     static Set<Booking> bookingSet = new TreeSet<>(new BookingComparator());
-    static List<Customer> customerList = new ArrayList<Customer>();
+    static List<Customer> customerList = new ArrayList<>();
     static Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();
 
-    static {
-        customerList.add(new Customer(1, "Chien", "20", "Male", "DN", 123, "VIP"));
-        customerList.add(new Customer(2, "Hoang", "19", "Male", "DN", 459, "Gold"));
-        facilityIntegerMap.put(new Villa("1", "Villa 1", 200, 150, 10, "VIP", 15, 2), 0);
-        facilityIntegerMap.put(new Villa("2", "Villa 2", 300, 250, 15, "Gold", 10, 3), 0);
-    }
+//    static {
+//        customerList.add(new Customer(1, "Chien", "20", "Male", "DN", 123, "VIP"));
+//        customerList.add(new Customer(2, "Hoang", "19", "Male", "DN", 459, "Gold"));
+//        facilityIntegerMap.put(new Villa("1", "Villa 1", 200, 150, 10, "VIP", 15, 2), 0);
+//        facilityIntegerMap.put(new Villa("2", "Villa 2", 300, 250, 15, "Gold", 10, 3), 0);
+//    }
 
     public Set<Booking> sendBooking() {
         return bookingSet;
@@ -100,6 +100,5 @@ public class BookingServiceImpl implements BookingService {
             }
         }
         return null;
-
     }
 }
