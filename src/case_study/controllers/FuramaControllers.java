@@ -185,14 +185,14 @@ public class FuramaControllers {
                 System.out.println("1.\tDisplay list customers use service");
                 break;
             case 2:
-                System.out.println("2.	Display list customers get voucher");
+                System.out.println("2.\tDisplay list customers get voucher");
                 break;
             case 3:
-                System.out.println("4\tReturn main menu");
+                System.out.println("3.\tReturn main menu");
                 displayMainMenu();
                 break;
             default:
-                System.err.println("Nhập từ 1- 4");
+                System.err.println("Nhập từ 1- 3");
         }
     }
 

@@ -1,6 +1,5 @@
 package case_study.service.Impl;
 
-import case_study.models.facility.Facility;
 import case_study.models.facility.House;
 import case_study.models.facility.Room;
 import case_study.models.facility.Villa;
@@ -9,42 +8,58 @@ import case_study.service.IFacilityService;
 import case_study.util.ReadAndWriteFile;
 import case_study.util.RegexException;
 
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class FacilityServiceImpl implements IFacilityService {
 
-    private static Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();
+    private static List<String[]> list = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
     final String PATH_VILLA = "src/case_study/data/villa.csv";
     final String PATH_HOUSE = "src/case_study/data/house.csv";
     final String PATH_ROOM = "src/case_study/data/room.csv";
+    public static Map<Villa, Integer> villaIntegerMap = new LinkedHashMap<>();
+    public static Map<House, Integer> houseIntegerMap = new LinkedHashMap<>();
+    public static Map<Room, Integer> roomIntegerMap = new LinkedHashMap<>();
 
     @Override
     public void displayFacility() {
-        List<String[]> list = ReadAndWriteFile.readToFile(PATH_VILLA);
-        facilityIntegerMap.clear();
+        list = ReadAndWriteFile.readToFile(PATH_VILLA);
+        villaIntegerMap.clear();
+
         for (String[] item : list) {
             Villa villa = new Villa(item[0], item[1], Integer.parseInt(item[2]), Double.parseDouble(item[3]),
                     Integer.parseInt(item[4]), item[5], Integer.parseInt(item[6]), Integer.parseInt(item[7]));
-            facilityIntegerMap.put(villa, 0);
-        }
-        List<String[]> listHouse = ReadAndWriteFile.readToFile(PATH_HOUSE);
-        for (String[] item : listHouse) {
-            House house = new House(item[0], item[1], Integer.parseInt(item[2]), Double.parseDouble(item[3]),
-                    Integer.parseInt(item[4]), item[5], Integer.parseInt(item[6]));
-            facilityIntegerMap.put(house, 0);
-        }
-        List<String[]> listRoom = ReadAndWriteFile.readToFile(PATH_ROOM);
-        for (String[] item : listRoom) {
-            Room room = new Room(item[0], item[1], Integer.parseInt(item[2]), Double.parseDouble(item[3]),
-                    Integer.parseInt(item[4]), item[5]);
-            facilityIntegerMap.put(room, 0);
+            int numUser = Integer.parseInt(item[8]);
+            villaIntegerMap.put(villa, numUser);
         }
 
-        for (Map.Entry<Facility, Integer> element : facilityIntegerMap.entrySet()) {
+        list = ReadAndWriteFile.readToFile(PATH_HOUSE);
+        houseIntegerMap.clear();
+        for (String[] item : list) {
+            House house = new House(item[0], item[1], Integer.parseInt(item[2]), Double.parseDouble(item[3]),
+                    Integer.parseInt(item[4]), item[5], Integer.parseInt(item[6]));
+            int numUser = Integer.parseInt(item[7]);
+            houseIntegerMap.put(house, numUser);
+        }
+
+        list = ReadAndWriteFile.readToFile(PATH_ROOM);
+        roomIntegerMap.clear();
+        for (String[] item : list) {
+            Room room = new Room(item[0], item[1], Integer.parseInt(item[2]), Double.parseDouble(item[3]),
+                    Integer.parseInt(item[4]), item[5]);
+            int numUser = Integer.parseInt(item[6]);
+            roomIntegerMap.put(room, numUser);
+        }
+
+        for (Map.Entry<Villa, Integer> element : villaIntegerMap.entrySet()) {
+            System.out.println("Tên service: " + element.getKey() + "Số lần thuê: " + element.getValue());
+        }
+
+        for (Map.Entry<House, Integer> element : houseIntegerMap.entrySet()) {
+            System.out.println("Tên service: " + element.getKey() + "Số lần thuê: " + element.getValue());
+        }
+
+        for (Map.Entry<Room, Integer> element : roomIntegerMap.entrySet()) {
             System.out.println("Tên service: " + element.getKey() + "Số lần thuê: " + element.getValue());
         }
     }
@@ -52,12 +67,65 @@ public class FacilityServiceImpl implements IFacilityService {
 
     @Override
     public void displayMaintain() {
+        list = ReadAndWriteFile.readToFile(PATH_VILLA);
+        villaIntegerMap.clear();
+        for (String[] item : list) {
+            Villa villa = new Villa(item[0], item[1], Integer.parseInt(item[2]), Double.parseDouble(item[3]),
+                    Integer.parseInt(item[4]), item[5], Integer.parseInt(item[6]), Integer.parseInt(item[7]));
+            int numUser = Integer.parseInt(item[8]);
+            villaIntegerMap.put(villa, numUser);
+        }
+
+        list = ReadAndWriteFile.readToFile(PATH_HOUSE);
+        houseIntegerMap.clear();
+        for (String[] item : list) {
+            House house = new House(item[0], item[1], Integer.parseInt(item[2]), Double.parseDouble(item[3]),
+                    Integer.parseInt(item[4]), item[5], Integer.parseInt(item[6]));
+            int numUser = Integer.parseInt(item[7]);
+            houseIntegerMap.put(house, numUser);
+        }
+
+        list = ReadAndWriteFile.readToFile(PATH_ROOM);
+        roomIntegerMap.clear();
+        for (String[] item : list) {
+            Room room = new Room(item[0], item[1], Integer.parseInt(item[2]), Double.parseDouble(item[3]),
+                    Integer.parseInt(item[4]), item[5]);
+            int numUser = Integer.parseInt(item[6]);
+            roomIntegerMap.put(room, numUser);
+        }
+
+        for (Map.Entry<Villa, Integer> element : villaIntegerMap.entrySet()) {
+            if( element.getValue() >= 5 ){
+                System.out.println(element.getKey() + "đem bảo trì");
+            }
+        }
+
+        for (Map.Entry<House, Integer> element : houseIntegerMap.entrySet()) {
+            if( element.getValue() >= 5 ){
+                System.out.println(element.getKey() + "đem bảo trì");
+            }
+        }
+
+        for (Map.Entry<Room, Integer> element : roomIntegerMap.entrySet()) {
+            if( element.getValue() >= 5 ){
+                System.out.println(element.getKey() + "đem bảo trì");
+            }
+        }
 
 
     }
 
     @Override
     public void addNewVilla() {
+        villaIntegerMap.clear();
+        list.clear();
+        list = ReadAndWriteFile.readToFile(PATH_VILLA);
+        for (String[] item : list) {
+            Villa villa = new Villa(item[0], item[1], Integer.parseInt(item[2]), Double.parseDouble(item[3]),
+                    Integer.parseInt(item[4]), item[5], Integer.parseInt(item[6]), Integer.parseInt(item[7]));
+            int numUser = Integer.parseInt(item[8]);
+            villaIntegerMap.put(villa, numUser);
+        }
         System.out.println("Nhập id dịch vụ: ");
         String idFacility = RegexException.inputIdVilla();
 
@@ -83,12 +151,16 @@ public class FacilityServiceImpl implements IFacilityService {
         int floor = Integer.parseInt(RegexException.inputFloor());
 
         Villa villa = new Villa(idFacility, serviceName, usableArea, rentalCosts, maxNumberOfPeople, roomType, poolArea, floor);
-        facilityIntegerMap.put(villa, 0);
+        villaIntegerMap.put(villa, 0);
 
-        String line = villa.getIdFacility() + "," + villa.getServiceName() + ","
-                + villa.getUsableArea() + "," + villa.getRentalCosts() + ","
-                + villa.getMaxNumberOfPeople() + "," + villa.getRoomType() + ","
-                + villa.getPoolArea() + "," + villa.getFloor();
+        String line = "";
+        for (Map.Entry<Villa, Integer> entry : villaIntegerMap.entrySet()) {
+
+            line += entry.getKey().getIdFacility() + "," + entry.getKey().getServiceName() + ","
+                    + entry.getKey().getUsableArea() + "," + entry.getKey().getRentalCosts() + ","
+                    + entry.getKey().getMaxNumberOfPeople() + "," + entry.getKey().getRoomType() + ","
+                    + entry.getKey().getPoolArea() + "," + entry.getKey().getFloor() + "," + entry.getValue() + "\n";
+        }
         ReadAndWriteFile.writeToFile(PATH_VILLA, line);
         System.out.println("Thêm thành công");
     }
@@ -117,10 +189,15 @@ public class FacilityServiceImpl implements IFacilityService {
         int floor = Integer.parseInt(RegexException.inputFloor());
 
         House house = new House(idFacility, serviceName, usableArea, rentalCosts, maxNumberOfPeople, roomType, floor);
-        facilityIntegerMap.put(house, 0);
-        String line = house.getIdFacility() + "," + house.getServiceName() + ","
-                + house.getUsableArea() + "," + house.getRentalCosts() + ","
-                + house.getMaxNumberOfPeople() + "," + house.getRoomType() + "," + house.getFloor();
+        houseIntegerMap.put(house, 0);
+        String line = "";
+        for (Map.Entry<House, Integer> entry : houseIntegerMap.entrySet()) {
+
+            line += entry.getKey().getIdFacility() + "," + entry.getKey().getServiceName() + ","
+                    + entry.getKey().getUsableArea() + "," + entry.getKey().getRentalCosts() + ","
+                    + entry.getKey().getMaxNumberOfPeople() + "," + entry.getKey().getRoomType() + ","
+                    + entry.getKey().getFloor() + "," + entry.getValue() + "\n";
+        }
         ReadAndWriteFile.writeToFile(PATH_HOUSE, line);
         System.out.println("Thêm thành công");
 
@@ -147,51 +224,63 @@ public class FacilityServiceImpl implements IFacilityService {
         String freeService = freeService();
 
         Room room = new Room(idFacility, serviceName, usableArea, rentalCosts, maxNumberOfPeople, freeService);
-        facilityIntegerMap.put(room, 0);
-        String line = room.getIdFacility() + "," + room.getServiceName() + ","
-                + room.getUsableArea() + "," + room.getRentalCosts() + ","
-                + room.getMaxNumberOfPeople() + "," + room.getFreeService();
+        roomIntegerMap.put(room, 0);
+        String line = "";
+        for (Map.Entry<Room, Integer> entry : roomIntegerMap.entrySet()) {
+
+            line += entry.getKey().getIdFacility() + "," + entry.getKey().getServiceName() + ","
+                    + entry.getKey().getUsableArea() + "," + entry.getKey().getRentalCosts() + ","
+                    + entry.getKey().getMaxNumberOfPeople() + "," + entry.getKey().getFreeService() + "," + entry.getValue() + "\n";
+        }
         ReadAndWriteFile.writeToFile(PATH_ROOM, line);
         System.out.println("Thêm thành công");
     }
 
     public String roomType() {
-        System.out.println("Loại phòng: ");
-        System.out.println("1. Presidential 2.Five star 3.Normal");
-        String choose = RegexException.choose();
-        switch (choose) {
-            case "1":
-                System.out.println("Presidential");
-                break;
-            case "2":
-                System.out.println("Five star");
-                break;
-            case "3":
-                System.out.println("Normal");
-                break;
-        }
-        return choose;
+        String choose;
+        do {
+
+            System.out.println("1. Presidential 2.Five star 3.Normal");
+            try {
+                choose = scanner.nextLine();
+                switch (choose) {
+                    case "1":
+                        return "Presidential";
+                    case "2":
+                        return "Five star";
+                    case "3":
+                        return "Normal";
+                    default:
+                        System.out.println("Nhập 1-3");
+                        roomType();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } while (true);
     }
 
     public String freeService() {
-        System.out.println("Loại dịch vụ miễn phí: ");
-        System.out.println("1.Breakfast 2.Lunch 3.Dinner");
-        String choose = RegexException.choose();
-        switch (choose) {
-            case "1":
-                choose = "Breakfast";
-                System.out.println("Breakfast");
-                break;
-            case "2":
-                choose = "Lunch";
-                System.out.println("Lunch");
-                break;
-            case "3":
-                choose = "Dinner";
-                System.out.println("Dinner");
-                break;
-        }
-        return choose;
+        String choose;
+        do {
+            System.out.println("1.Breakfast 2.Lunch 3.Dinner");
+            try {
+                choose = scanner.nextLine();
+                switch (choose) {
+                    case "1":
+                        return "Breakfast";
+                    case "2":
+                        return "Lunch";
+                    case "3":
+                        return "Dinner";
+                    default:
+                        System.out.println("Nhập 1-3");
+                        freeService();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } while (true);
     }
 }
 

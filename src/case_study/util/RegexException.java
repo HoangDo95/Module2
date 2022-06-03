@@ -13,8 +13,8 @@ public class RegexException {
     public static final String REGEX_AREA = "^([3-9]\\d|[1-9]\\d{2,})$";
     public static final String REGEX_FLOOR = "^[1-9]|([1][0-9])$";
     public static final String REGEX_PHONE = "^(0)(9|7)[0-9]{8}$";
-    public static final String REGEX_CHOOSE = "^[1-3]$";
-    public static final String REGEX_CHOOSE1 = "^[1-4]$";
+    public static final String REGEX_CHOOSE1 = "^[1-3]$";
+    public static final String REGEX_CLASSIFY = "^[1-5]$";
     public static final String REGEX_GENDER = "^[1-2]$";
     private static final String REGEX_BIRTHDAY =
     "^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[13-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$";
@@ -51,17 +51,18 @@ public class RegexException {
     public static String inputFloor() {
         return RegexData.regexStr(scanner.nextLine(), REGEX_FLOOR, "Bạn nhập sai định dạng, số tầng phải dương");
     }
-    public static String choose(){
-        return RegexData.regexStr(scanner.nextLine(), REGEX_CHOOSE, "Bạn nhập sai định dạng, vui lòng nhập 1-3");
-    }
+//    public static String choose(){
+//        return RegexData.regexStr(scanner.nextLine(), REGEX_CHOOSE, "Bạn nhập sai định dạng, vui lòng nhập 1-3");
+//    }
     public static String inputDayOfBirth(){
         return RegexData.regexAge(scanner.nextLine(), REGEX_BIRTHDAY);
     }
+
     public static String inputGender(){
         return RegexData.regexStr(scanner.nextLine(), REGEX_GENDER  , "Bạn nhập sai định dạng, vui lòng nhập 1-2");
     }
     public static String inputClassify(){
-        return RegexData.regexStr(scanner.nextLine(), REGEX_CHOOSE, "Bạn nhập sai định dạng, vui lòng nhập 1-5");
+        return RegexData.regexStr(scanner.nextLine(), REGEX_CLASSIFY, "Bạn nhập sai định dạng, vui lòng nhập 1-5");
     }
     public static String choose1(){
         return RegexData.regexStr(scanner.nextLine(), REGEX_CHOOSE1, "Bạn nhập sai định dạng, vui lòng nhập 1-4");

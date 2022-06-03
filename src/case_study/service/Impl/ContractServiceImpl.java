@@ -5,6 +5,7 @@ import case_study.models.booking.Booking;
 import case_study.models.contract.Contract;
 import case_study.models.person.Customer;
 import case_study.service.ContractService;
+import ss12_map_tree.bai_tap.product_mvc.util.ReadAndWrite;
 
 import java.util.*;
 
@@ -38,6 +39,15 @@ public class ContractServiceImpl implements ContractService {
 
     @Override
     public void displayListContract() {
+        List<String[]> list = ReadAndWrite.readToFile("src/case_study/data/contract.csv");
+        contractList.clear();
+        for (String[] item : list) {
+            Contract contract;
+            contract = new Contract(item[0],item[1],item[2],item[3],item[4]);
+            contractList.add(contract);
+        }
+
+
         for (Contract item : contractList) {
             System.out.println(item);
         }

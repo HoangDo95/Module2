@@ -61,10 +61,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         String gender = RegexException.inputGender();
         switch (gender) {
             case "1":
-                System.out.println("Nam");
+                gender = "Nam";
                 break;
             case "2":
-                System.out.println("Nữ");
+                gender = "Nữ";
                 break;
         }
 
@@ -81,16 +81,16 @@ public class EmployeeServiceImpl implements EmployeeService {
         String level = RegexException.choose1();
         switch (level) {
             case "1":
-                System.out.println("Trung câp");
+                level = "Trung câp";
                 break;
             case "2":
-                System.out.println("Cao đẳng");
+                level = "Cao đẳng";
                 break;
             case "3":
-                System.out.println("Đại học");
+                level = "Đại học";
                 break;
             case "4":
-                System.out.println("Sau đại học");
+                level = "Sau đại học";
                 break;
         }
 
@@ -98,16 +98,16 @@ public class EmployeeServiceImpl implements EmployeeService {
         String workingPosition = RegexException.choose1();
         switch (workingPosition) {
             case "1":
-                System.out.println("Lễ tân");
+                workingPosition = "Lễ tân";
                 break;
             case "2":
-                System.out.println("Phục vụ");
+                workingPosition = "Phục vụ";
                 break;
             case "3":
-                System.out.println("Quản lý");
+                workingPosition = "Quản lý";
                 break;
             case "4":
-                System.out.println("Giám đốc");
+                workingPosition = "Giám đốc";
                 break;
         }
 
@@ -158,10 +158,10 @@ public class EmployeeServiceImpl implements EmployeeService {
             String gender = RegexException.inputGender();
             switch (gender) {
                 case "1":
-                    System.out.println("Nam");
+                    gender = "Nam";
                     break;
                 case "2":
-                    System.out.println("Nữ");
+                    gender = "Nữ";
                     break;
             }
             System.out.println("Nhập địa chỉ: ");
@@ -177,16 +177,16 @@ public class EmployeeServiceImpl implements EmployeeService {
             String level = RegexException.choose1();
             switch (level) {
                 case "1":
-                    System.out.println("Trung câp");
+                    level = "Trung câp";
                     break;
                 case "2":
-                    System.out.println("Cao đẳng");
+                    level = "Cao đẳng";
                     break;
                 case "3":
-                    System.out.println("Đại học");
+                    level = "Đại học";
                     break;
                 case "4":
-                    System.out.println("Sau đại học");
+                    level = "Sau đại học";
                     break;
             }
 
@@ -194,16 +194,16 @@ public class EmployeeServiceImpl implements EmployeeService {
             String workingPosition = RegexException.choose1();
             switch (workingPosition) {
                 case "1":
-                    System.out.println("Lễ tân");
+                    workingPosition = "Lễ tân";
                     break;
                 case "2":
-                    System.out.println("Phục vụ");
+                    workingPosition = "Phục vụ";
                     break;
                 case "3":
-                    System.out.println("Quản lý");
+                    workingPosition = "Quản lý";
                     break;
                 case "4":
-                    System.out.println("Giám đốc");
+                    workingPosition = "Giám đốc";
                     break;
             }
             System.out.println("Nhập tiền lương: ");

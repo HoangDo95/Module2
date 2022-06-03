@@ -1,6 +1,7 @@
 package ss12_map_tree.bai_tap.product_mvc.service;
 
 import ss12_map_tree.bai_tap.product_mvc.model.Products;
+import ss12_map_tree.bai_tap.product_mvc.util.ReadAndWrite;
 import ss12_map_tree.bai_tap.product_mvc.util.SortPriceAscendingComparator;
 
 import java.util.*;
@@ -9,17 +10,24 @@ public class ProductsService implements IProductsService {
     public static Scanner scanner = new Scanner(System.in);
     public static List<Products> productsList = new LinkedList<>();
     int count;
-
-    static {
-        productsList.add(new Products(1, "iphone X", 200, 10, "Apple"));
-        productsList.add(new Products(2, "S22 Ultra", 250, 20, "Samsung"));
-        productsList.add(new Products(3, "Mi 10", 120, 30, "Xiaomi"));
-        productsList.add(new Products(4, "Oppo A6", 150, 25, "Oppo"));
-
-    }
+    final String PATH = "src/ss12_map_tree/bai_tap/product_mvc/data/product.csv";
+//    static {
+//        productsList.add(new Products(1, "iphone X", 200, 10, "Apple"));
+//        productsList.add(new Products(2, "S22 Ultra", 250, 20, "Samsung"));
+//        productsList.add(new Products(3, "Mi 10", 120, 30, "Xiaomi"));
+//        productsList.add(new Products(4, "Oppo A6", 150, 25, "Oppo"));
+//
+//    }
 
     @Override
     public void displayProductsList() {
+        List<String[]> list = ReadAndWrite.readToFile(PATH);
+        productsList.clear();
+        for (String[] item : list) {
+            Products products = new Products(Integer.parseInt(item[0]),item[1],Double.parseDouble(item[2]),Integer.parseInt(item[3]),item[4]);
+            productsList.add(products);
+        }
+
         for (Products item : productsList) {
             System.out.println(item);
         }
@@ -27,37 +35,111 @@ public class ProductsService implements IProductsService {
 
     @Override
     public void addNewProductsList() {
+        List<String[]> list = ReadAndWrite.readToFile(PATH);
+        productsList.clear();
+        for (String[] item : list) {
+            Products products = new Products(Integer.parseInt(item[0]),item[1],Double.parseDouble(item[2]),Integer.parseInt(item[3]),item[4]);
+            productsList.add(products);
+        }
+
+        int max =0;
+        if (productsList.isEmpty()) {
+            count = 101;
+        } else {
+            for (Products item : productsList) {
+                if (item.getId()>max){
+                    max = item.getId();
+                }
+            }
+            count = max+1;
+        }
+
         System.out.println("Nhập tên: ");
         String name = scanner.nextLine();
+
         System.out.println("Nhập giá: ");
         double price = Double.parseDouble(scanner.nextLine());
+
         System.out.println("Nhập số lượng: ");
         int amount = Integer.parseInt(scanner.nextLine());
+
         System.out.println("Nhập nhà sản xuất: ");
         String production = scanner.nextLine();
-        count = 4;
-        Products products = new Products(count + 1, name, price, amount, production);
+
+        Products products = new Products(count, name, price, amount, production);
         productsList.add(products);
-        count++;
+
+        String str = "";
+        for (Products item : productsList) {
+            str += item.getId() + "," + item.getName() + "," + item.getPrice()
+                    + "," + item.getAmount() + "," + item.getProduction()+"\n";
+
+        }ReadAndWrite.writeToFile(PATH,str);
+        System.out.println("done");
+
     }
 
     @Override
     public void searchProductsListByName() {
+        List<String[] > list = ReadAndWrite.readToFile(PATH);
+        productsList.clear();
+        for (String[] item : list) {
+            Products products = new Products(Integer.parseInt(item[0]),item[1],
+                                                Double.parseDouble(item[2]),
+                                                Integer.parseInt(item[3]),item[4]);
+            productsList.add(products);
+        }
         System.out.println("Nhập từ cần tìm: ");
         String search = scanner.nextLine();
-        for (Products item : productsList) {
-            if (item != null && item.getName().contains(search)) {
-                System.out.println(item);
+        boolean check = false;
+        for (int i = 0; i < productsList.size(); i++) {
+            if(productsList.get(i).getName().contains(search)){
+                System.out.println(productsList.get(i));
+                check = true;
+            }else {
+                check = false;
             }
+
+        }if(check == false){
+            System.out.println("Không thấy tên cần tìm");
         }
     }
 
+
     @Override
     public void deleteProductsListById() {
+        List<String[] > list = ReadAndWrite.readToFile(PATH);
+        productsList.clear();
+        for (String[] item : list) {
+            Products products = new Products(Integer.parseInt(item[0]),item[1],
+                    Double.parseDouble(item[2]),
+                    Integer.parseInt(item[3]),item[4]);
+            productsList.add(products);
+        }
+
         System.out.println("Nhập vị trí id cần xóa: ");
         int inputId = Integer.parseInt(scanner.nextLine());
-        productsList.remove(inputId - 1);
+        boolean check = false;
+        for (int i = 0; i < productsList.size(); i++) {
+            if(inputId == productsList.get(i).getId()){
+                productsList.remove(i);
+                check = true;
+            }else {
+                check = false;
+            }
+
+        }if(check == false){
+            System.out.println("Không tìm thấy id cần xóa");
+        }
+
         System.out.println("Delete Done");
+
+        String str = "";
+        for (Products item : productsList) {
+            str += item.getId() + "," + item.getName() + "," + item.getPrice()
+                    + "," + item.getAmount() + "," + item.getProduction()+"\n";
+
+        }ReadAndWrite.writeToFile(PATH,str);
         displayProductsList();
     }
 

@@ -9,8 +9,13 @@ public class Contract {
     private String prepay; // trả trước
     private String paymentAmount;// trả hết
     private Customer idCustomer;
+    private String iBooking;
+    private String iCustomer;
 
     public Contract() {
+
+    }
+    public Contract(String idContract,String iBooking,String prepay, String paymentAmount, String iCustomer) {
     }
 
     public Contract(String idContract, Booking idBooking, String prepay, String paymentAmount, Customer idCustomer) {

@@ -6,17 +6,18 @@ public class Main {
     public static Product[] productList = new Product[100];
     public static int count;
     static Scanner scanner = new Scanner(System.in);
+    final String PATH = "src/crud/Product/data/product.csv";
 
-    static {
-        System.out.println("Block static");
-        productList[0] = new Product(1, "Iphone X", 100, 10, "Apple");
-        productList[1] = new Product(2, "S22 Ultra", 110, 20, "Samsung");
-        productList[2] = new Product(3, "Mi 10", 120, 30, "Xiaomi");
-        productList[3] = new Product(4, "Iphone 11", 140, 40, "Apple");
-        productList[4] = new Product(5, "Iphone 12", 150, 50, "Apple");
-        count = 5;
-
-    }
+//    static {
+//        System.out.println("Block static");
+//        productList[0] = new Product(1, "Iphone X", 100, 10, "Apple");
+//        productList[1] = new Product(2, "S22 Ultra", 110, 20, "Samsung");
+//        productList[2] = new Product(3, "Mi 10", 120, 30, "Xiaomi");
+//        productList[3] = new Product(4, "Iphone 11", 140, 40, "Apple");
+//        productList[4] = new Product(5, "Iphone 12", 150, 50, "Apple");
+//        count = 5;
+//
+//    }
 
     public static void addNewProduct() {
         System.out.println("Nhập tên: ");

@@ -2,10 +2,10 @@ package case_study.service.Impl;
 
 import case_study.models.booking.Booking;
 import case_study.models.facility.Facility;
-import case_study.models.facility.Villa;
 import case_study.models.person.Customer;
 import case_study.service.BookingService;
 import case_study.util.BookingComparator;
+import ss12_map_tree.bai_tap.product_mvc.util.ReadAndWrite;
 
 import java.util.*;
 
@@ -40,13 +40,21 @@ public class BookingServiceImpl implements BookingService {
         String endDate = scanner.nextLine();
         Booking booking = new Booking(id, starDate, endDate, customer, facility);
         bookingSet.add(booking);
-        System.out.println("Đã booking thành công");
+        System.out.println("Đã sbooking thành công");
     }
 
     @Override
     public void displayListBooking() {
+        List<String[]> list = ReadAndWrite.readToFile("src/case_study/data/booking.csv");
+        bookingSet.clear();
+        for (String[] item : list) {
+            Booking booking;
+            booking = new Booking(Integer.parseInt(item[0]),item[1],item[2],item[3],item[4]);
+            bookingSet.add(booking);
+        }
+
         for (Booking booking : bookingSet) {
-            System.out.println(booking.toString());
+            System.out.println(booking);
         }
     }
 
@@ -65,7 +73,6 @@ public class BookingServiceImpl implements BookingService {
                     check = false;
                     return customer;
                 }
-
             }
             if (check) {
                 System.out.println("bạn đã nhập sai, vui lòng nhập lại id khách hàng: ");
@@ -77,7 +84,7 @@ public class BookingServiceImpl implements BookingService {
     }
 
     public static Facility chooseFacility() {
-        System.out.println("Danh sách dịch vỵ: ");
+        System.out.println("Danh sách dịch vụ: ");
         for (Map.Entry<Facility, Integer> entry : facilityIntegerMap.entrySet()) {
             System.out.println(entry.toString());
 
@@ -92,7 +99,6 @@ public class BookingServiceImpl implements BookingService {
                     check = false;
                     return entry.getKey();
                 }
-
             }
             if (check) {
                 System.out.println("bạn đã nhập sai, vui lòng nhập lại id khách hàng: ");

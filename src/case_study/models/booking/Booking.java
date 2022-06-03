@@ -9,8 +9,19 @@ public class Booking {
     private String endDate;
     private Customer customer;
     private Facility facility;
+    private String idCustomer;
+    private String idFacility;
+
 
     public Booking() {
+    }
+    public Booking(Integer idBooking,String starDate, String endDate,String idCustomer, String idFacility){
+        this.idBooking = idBooking;
+        this.starDate = starDate;
+        this.endDate = endDate;
+        this.idCustomer = idCustomer;
+        this.idFacility = idFacility;
+
     }
 
     public Booking(Integer idBooking, String starDate, String endDate, Customer customer, Facility facility) {
@@ -20,6 +31,8 @@ public class Booking {
         this.customer = customer;
         this.facility = facility;
     }
+
+
 
     public Integer getIdBooking() {
         return idBooking;

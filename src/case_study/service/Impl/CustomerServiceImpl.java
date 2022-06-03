@@ -58,11 +58,9 @@ public class CustomerServiceImpl implements CustomerService {
         switch (gender) {
             case "1":
                 gender = "Nam";
-                System.out.println("Nam");
                 break;
             case "2":
                 gender = "Nữ";
-                System.out.println("Nữ");
                 break;
         }
         System.out.println("Nhập địa chỉ: ");
@@ -76,23 +74,18 @@ public class CustomerServiceImpl implements CustomerService {
         switch (classify) {
             case "1":
                 classify = "Diamond";
-                System.out.println("Diamond");
                 break;
             case "2":
                 classify = "Platinium";
-                System.out.println("Platinium");
                 break;
             case "3":
                 classify = "Gold";
-                System.out.println("Gold");
                 break;
             case "4":
                 classify = "Silver";
-                System.out.println("Silver");
                 break;
             case "5":
                 classify = "Member";
-                System.out.println("Member");
                 break;
         }
 
@@ -139,10 +132,10 @@ public class CustomerServiceImpl implements CustomerService {
             String gender = RegexException.inputGender();
             switch (gender) {
                 case "1":
-                    System.out.println("Nam");
+                    gender = "Nam";
                     break;
                 case "2":
-                    System.out.println("Nữ");
+                    gender = "Nữ";
                     break;
             }
 
@@ -157,23 +150,18 @@ public class CustomerServiceImpl implements CustomerService {
             switch (classify) {
                 case "1":
                     classify = "Diamond";
-                    System.out.println("Diamond");
                     break;
                 case "2":
                     classify = "Platinium";
-                    System.out.println("Platinium");
                     break;
                 case "3":
                     classify = "Gold";
-                    System.out.println("Gold");
                     break;
                 case "4":
                     classify = "Silver";
-                    System.out.println("Silver");
                     break;
                 case "5":
                     classify = "Member";
-                    System.out.println("Member");
                     break;
             }
 
