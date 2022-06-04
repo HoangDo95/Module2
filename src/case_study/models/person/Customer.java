@@ -1,6 +1,6 @@
 package case_study.models.person;
 
-public class Customer extends Person{
+public class Customer extends Person {
     private String classify; //loại khách hàng
 
     public Customer() {
@@ -8,12 +8,12 @@ public class Customer extends Person{
 
     @Override
     public String getInfo() {
-        return String.format("%s,%s,%s,%s,%s,%s,%s,",super.getId(),
-                                                    super.getName(),
-                                                    super.getDayOfBirth(),
-                                                    super.getGender(),
-                                                    super.getAddress(),
-                                                    super.getPhoneNumber(),getClassify());
+        return String.format("%s,%s,%s,%s,%s,%s,%s,", super.getId(),
+                super.getName(),
+                super.getDayOfBirth(),
+                super.getGender(),
+                super.getAddress(),
+                super.getPhoneNumber(), getClassify());
     }
 
     public Customer(int id, String name, String dayOfBirth, String gender, String address, int phoneNumber, String classify) {

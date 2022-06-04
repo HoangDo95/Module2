@@ -14,12 +14,6 @@ public class CustomerServiceImpl implements CustomerService {
     public static List<Customer> customerList = new LinkedList<>();
     final String PATH = "src/case_study/data/customer.csv";
 
-//    static {
-//        customerList.add(new Customer(11, "Một", "22 / 5 / 1990", "Nam", "DN", 123456789, "Member"));
-//        customerList.add(new Customer(12, "Hai", "2 / 7 / 1992", "Nữ", "QN", 123456789, "Silver"));
-//        customerList.add(new Customer(13, "Ba", "12 / 12 / 1995", "Nam", "HCM", 123456789, "Gold"));
-//    }
-
     @Override
     public void display() {
         List<String[]> list = ReadAndWriteFile.readToFile(PATH);

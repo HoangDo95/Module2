@@ -1,24 +1,17 @@
 package case_study.models.contract;
 
-import case_study.models.booking.Booking;
-import case_study.models.person.Customer;
-
 public class Contract {
     private String idContract;
-    private Booking idBooking;
+    private String idBooking;
     private String prepay; // trả trước
     private String paymentAmount;// trả hết
-    private Customer idCustomer;
-    private String iBooking;
-    private String iCustomer;
+    private String idCustomer;
+
 
     public Contract() {
-
-    }
-    public Contract(String idContract,String iBooking,String prepay, String paymentAmount, String iCustomer) {
     }
 
-    public Contract(String idContract, Booking idBooking, String prepay, String paymentAmount, Customer idCustomer) {
+    public Contract(String idContract, String idBooking, String prepay, String paymentAmount, String idCustomer) {
         this.idContract = idContract;
         this.idBooking = idBooking;
         this.prepay = prepay;
@@ -34,11 +27,11 @@ public class Contract {
         this.idContract = idContract;
     }
 
-    public Booking getIdBooking() {
+    public String getIdBooking() {
         return idBooking;
     }
 
-    public void setIdBooking(Booking idBooking) {
+    public void setIdBooking(String idBooking) {
         this.idBooking = idBooking;
     }
 
@@ -58,11 +51,11 @@ public class Contract {
         this.paymentAmount = paymentAmount;
     }
 
-    public Customer getIdCustomer() {
+    public String getIdCustomer() {
         return idCustomer;
     }
 
-    public void setIdCustomer(Customer idCustomer) {
+    public void setIdCustomer(String idCustomer) {
         this.idCustomer = idCustomer;
     }
 

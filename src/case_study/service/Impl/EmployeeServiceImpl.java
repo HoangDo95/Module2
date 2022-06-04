@@ -14,13 +14,6 @@ public class EmployeeServiceImpl implements EmployeeService {
     public static List<Employee> employeeList = new ArrayList<>();
     final String PATH = "src/case_study/data/employee.csv";
 
-//    static {
-//        employeeList.add(new Employee(1, "Một", "22 / 05 / 1990", "Nam", "DN", 123456789, "abc1@gmail.com", "Trung cấp", "Lễ tân", 5000));
-//        employeeList.add(new Employee(2, "Hai", "21 / 04 / 1992", "Nữ", "QN", 1111111, "abc2@gmail.com", "Cao đẳng", "Phục vụ", 4000));
-//        employeeList.add(new Employee(3, "Ba", "10 / 05 / 1995", "Nam", "HCM", 222222, "abc3@gmail.com", "Đại học", "Quản lý", 7000));
-//        employeeList.add(new Employee(4, "Bốn", "05 / 05 / 1997", "Nữ", "HN", 333333, "abc5@gmail.com", "Sau đại học", "Giám đốc", 10000));
-//    }
-
     @Override
     public void display() {
         List<String[]> list = ReadAndWriteFile.readToFile(PATH);
@@ -206,6 +199,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                     workingPosition = "Giám đốc";
                     break;
             }
+
             System.out.println("Nhập tiền lương: ");
             int salary = Integer.parseInt(RegexException.inputTotalPay());
 

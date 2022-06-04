@@ -106,7 +106,6 @@ public class FuramaControllers {
                 System.err.println("Vui lòng nhập số");
             }
         } while (true);
-
     }
 
     public static void addNewFacility() {
@@ -147,23 +146,23 @@ public class FuramaControllers {
             choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
                 case 1:
-                    bookingService.addBooking();
+                    bookingService.add();
                     bookingManagement();
                     break;
                 case 2:
-                    bookingService.displayListBooking();
+                    bookingService.display();
                     bookingManagement();
                     break;
                 case 3:
-                    contractService.createNewContract();
+                    contractService.edit();
                     bookingManagement();
                     break;
                 case 4:
-                    contractService.displayListContract();
+                    contractService.display();
                     bookingManagement();
                     break;
                 case 5:
-                    contractService.editContract();
+                    contractService.edit();
                     bookingManagement();
                     break;
                 case 6:

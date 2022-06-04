@@ -4,13 +4,15 @@ import java.util.Objects;
 
 public class Facility {
     private String idFacility;
-    private String serviceName ;
+    private String serviceName;
     private int usableArea;
     private double rentalCosts;
     private int maxNumberOfPeople;
-    public Facility(){
+
+    public Facility() {
 
     }
+
     public Facility(String idFacility, String serviceName, int usableArea, double rentalCosts, int maxNumberOfPeople) {
         this.idFacility = idFacility;
         this.serviceName = serviceName;

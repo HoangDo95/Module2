@@ -72,6 +72,7 @@ public abstract class Person {
     public String getGender() {
         return gender;
     }
+
     public abstract String getInfo();
 
     @Override

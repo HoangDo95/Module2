@@ -64,7 +64,6 @@ public class FacilityServiceImpl implements IFacilityService {
         }
     }
 
-
     @Override
     public void displayMaintain() {
         list = ReadAndWriteFile.readToFile(PATH_VILLA);
@@ -95,24 +94,22 @@ public class FacilityServiceImpl implements IFacilityService {
         }
 
         for (Map.Entry<Villa, Integer> element : villaIntegerMap.entrySet()) {
-            if( element.getValue() >= 5 ){
+            if (element.getValue() >= 5) {
                 System.out.println(element.getKey() + "đem bảo trì");
             }
         }
 
         for (Map.Entry<House, Integer> element : houseIntegerMap.entrySet()) {
-            if( element.getValue() >= 5 ){
+            if (element.getValue() >= 5) {
                 System.out.println(element.getKey() + "đem bảo trì");
             }
         }
 
         for (Map.Entry<Room, Integer> element : roomIntegerMap.entrySet()) {
-            if( element.getValue() >= 5 ){
+            if (element.getValue() >= 5) {
                 System.out.println(element.getKey() + "đem bảo trì");
             }
         }
-
-
     }
 
     @Override
@@ -200,7 +197,6 @@ public class FacilityServiceImpl implements IFacilityService {
         }
         ReadAndWriteFile.writeToFile(PATH_HOUSE, line);
         System.out.println("Thêm thành công");
-
     }
 
     @Override
@@ -239,7 +235,6 @@ public class FacilityServiceImpl implements IFacilityService {
     public String roomType() {
         String choose;
         do {
-
             System.out.println("1. Presidential 2.Five star 3.Normal");
             try {
                 choose = scanner.nextLine();
