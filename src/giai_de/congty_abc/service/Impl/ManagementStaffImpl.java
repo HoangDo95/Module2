@@ -5,6 +5,7 @@ import giai_de.congty_abc.model.Management;
 
 import giai_de.congty_abc.service.ManagementStaffService;
 import giai_de.congty_abc.util.ReadAndWrite;
+import giai_de.congty_abc.util.RegexException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,15 +23,16 @@ public class ManagementStaffImpl implements ManagementStaffService {
         managementList.clear();
         for (String[] item : list) {
             Management management = new Management(Integer.parseInt(item[0]),
-                    item[1], item[2], item[3], item[4],
-                    Double.parseDouble(item[5]), Double.parseDouble(item[6]));
+                    item[1], item[2],
+                    item[3], item[4],
+                    item[5], item[6]);
 
             managementList.add(management);
         }
         int count;
         int max = 0;
         if (managementList.isEmpty()) {
-            count = 001;
+            count = 1;
         } else {
             for (Management item : managementList) {
                 if (item.getId() > max) {
@@ -39,23 +41,23 @@ public class ManagementStaffImpl implements ManagementStaffService {
             }
             count = max + 1;
         }
-        System.out.println("Mã nhân viên quản lý : ");
+        System.out.println("Mã nhân viên quản lý : QL-XX");
         String employeeCode = scanner.nextLine();
 
         System.out.println("Nhập tên: ");
-        String name = scanner.nextLine();
+        String name = RegexException.inputName();
 
         System.out.println("Ngày sinh: ");
-        String dayOfBirth = scanner.nextLine();
+        String dayOfBirth = RegexException.inputDayOfBirth();
 
         System.out.println("Địa chỉ: ");
         String address = scanner.nextLine();
 
         System.out.println("Lương cơ bản: ");
-        Double salaryBasic = Double.parseDouble(scanner.nextLine());
+        String salaryBasic = RegexException.inputNumber();
 
         System.out.println("Hệ số lương: ");
-        Double salaryFactor = Double.parseDouble(scanner.nextLine());
+        String salaryFactor = RegexException.inputNumber();
 
         Management management = new Management(count, employeeCode, name, dayOfBirth, address, salaryBasic, salaryFactor);
         managementList.add(management);
@@ -73,8 +75,9 @@ public class ManagementStaffImpl implements ManagementStaffService {
         managementList.clear();
         for (String[] item : list) {
             Management management = new Management(Integer.parseInt(item[0]),
-                    item[1], item[2], item[3], item[4],
-                    Double.parseDouble(item[5]), Double.parseDouble(item[6]));
+                    item[1], item[2],
+                    item[3], item[4],
+                    item[5], item[6]);
 
             managementList.add(management);
         }
@@ -91,12 +94,9 @@ public class ManagementStaffImpl implements ManagementStaffService {
         for (String[] item : list) {
             Management management = new Management(
                     Integer.parseInt(item[0]),
-                    item[1],
-                    item[2],
-                    item[3],
-                    item[4],
-                    Double.parseDouble(item[5]),
-                    Double.parseDouble(item[6]));
+                    item[1], item[2],
+                    item[3], item[4],
+                    item[5], item[6]);
 
             managementList.add(management);
         }
@@ -138,8 +138,9 @@ public class ManagementStaffImpl implements ManagementStaffService {
         managementList.clear();
         for (String[] item : list) {
             Management management = new Management(Integer.parseInt(item[0]),
-                    item[1], item[2], item[3], item[4],
-                    Double.parseDouble(item[5]), Double.parseDouble(item[6]));
+                    item[1], item[2],
+                    item[3], item[4],
+                    item[5], item[6]);
 
             managementList.add(management);
         }

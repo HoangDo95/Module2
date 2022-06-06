@@ -1,36 +1,36 @@
 package giai_de.congty_abc.model;
 
 public class Management extends Person {
-    private Double salaryBasic;
-    private Double salaryFactor;
+    private String salaryBasic;
+    private String salaryFactor;
 
     public Management() {
     }
 
-    public Management(Double salaryBasic, Double salaryFactor) {
+    public Management(String salaryBasic, String salaryFactor) {
         this.salaryBasic = salaryBasic;
         this.salaryFactor = salaryFactor;
     }
 
-    public Management(int id, String employeeCode, String name, String dayOfBirth, String address, Double salaryBasic, Double salaryFactor) {
+    public Management(int id, String employeeCode, String name, String dayOfBirth, String address, String salaryBasic, String salaryFactor) {
         super(id, employeeCode, name, dayOfBirth, address);
         this.salaryBasic = salaryBasic;
         this.salaryFactor = salaryFactor;
     }
 
-    public Double getSalaryBasic() {
+    public String getSalaryBasic() {
         return salaryBasic;
     }
 
-    public void setSalaryBasic(Double salaryBasic) {
+    public void setSalaryBasic(String salaryBasic) {
         this.salaryBasic = salaryBasic;
     }
 
-    public Double getSalaryFactor() {
+    public String getSalaryFactor() {
         return salaryFactor;
     }
 
-    public void setSalaryFactor(Double salaryFactor) {
+    public void setSalaryFactor(String salaryFactor) {
         this.salaryFactor = salaryFactor;
     }
 

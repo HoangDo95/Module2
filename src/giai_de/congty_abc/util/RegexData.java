@@ -1,6 +1,8 @@
 package giai_de.congty_abc.util;
 
 import case_study.util.exception.AgeException;
+import case_study.util.exception.AmountException;
+import case_study.util.exception.NameException;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -49,4 +51,40 @@ public class RegexData {
         }
         return temp;
     }
+
+    public static String regexName(String temp, String regex) {
+        boolean check = true;
+        while (check) {
+            try {
+                if (Pattern.matches(regex, temp)) {
+                    check = false;
+                } else {
+                    throw new NameException("Sai định dạng, Chữ cái đầu viết hoa ");
+                }
+            } catch (NameException e) {
+                System.out.println(e.getMessage());
+                temp = scanner.nextLine();
+            }
+        }
+        return temp;
+    }
+
+    public static String regexAmount(String temp, String regex) {
+        boolean check = true;
+        while (check) {
+            try {
+                if (Pattern.matches(regex, temp)) {
+                    check = false;
+                } else {
+                    throw new AmountException("Sai định dạng, giá tiền phải là số dương");
+                }
+            } catch (AmountException e) {
+                System.out.println(e.getMessage());
+                temp = scanner.nextLine();
+            }
+        }
+        return temp;
+    }
+
+
 }

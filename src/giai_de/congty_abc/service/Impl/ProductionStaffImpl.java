@@ -4,6 +4,7 @@ import case_study.util.ReadAndWriteFile;
 import giai_de.congty_abc.model.Production;
 import giai_de.congty_abc.service.ProductionStaffService;
 import giai_de.congty_abc.util.ReadAndWrite;
+import giai_de.congty_abc.util.RegexException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,15 +22,16 @@ public class ProductionStaffImpl implements ProductionStaffService {
         productionList.clear();
         for (String[] item : list) {
             Production production = new Production(Integer.parseInt(item[0]),
-                    item[1], item[2], item[3], item[4],
-                    Integer.parseInt(item[5]), Integer.parseInt(item[6]));
+                    item[1], item[2],
+                    item[3], item[4],
+                    item[5], item[6]);
 
             productionList.add(production);
         }
         int count;
         int max = 0;
         if (productionList.isEmpty()) {
-            count = 001;
+            count = 1;
         } else {
             for (Production item : productionList) {
                 if (item.getId() > max) {
@@ -38,23 +40,23 @@ public class ProductionStaffImpl implements ProductionStaffService {
             }
             count = max + 1;
         }
-        System.out.println("Mã nhân viên sản xuất: ");
+        System.out.println("Mã nhân viên sản xuất: SX-XX");
         String employeeCode = scanner.nextLine();
 
         System.out.println("Nhập tên: ");
-        String name = scanner.nextLine();
+        String name = RegexException.inputName();
 
         System.out.println("Ngày sinh: ");
-        String dayOfBirth = scanner.nextLine();
+        String dayOfBirth = RegexException.inputDayOfBirth();
 
         System.out.println("Địa chỉ: ");
         String address = scanner.nextLine();
 
         System.out.println("Số lượng sản phẩm: ");
-        int productNumber = Integer.parseInt(scanner.nextLine());
+        String productNumber = RegexException.inputNumber();
 
         System.out.println("Giá sản phẩm: ");
-        int productFactor = Integer.parseInt(scanner.nextLine());
+        String productFactor = RegexException.inputNumber();
 
 
         Production production = new Production(count, employeeCode, name, dayOfBirth, address, productNumber, productFactor);
@@ -74,8 +76,9 @@ public class ProductionStaffImpl implements ProductionStaffService {
         productionList.clear();
         for (String[] item : list) {
             Production production = new Production(Integer.parseInt(item[0]),
-                    item[1], item[2], item[3], item[4],
-                    Integer.parseInt(item[5]), Integer.parseInt(item[6]));
+                    item[1], item[2],
+                    item[3], item[4],
+                    item[5], item[6]);
 
             productionList.add(production);
         }
@@ -91,13 +94,14 @@ public class ProductionStaffImpl implements ProductionStaffService {
         productionList.clear();
         for (String[] item : list) {
             Production production = new Production(Integer.parseInt(item[0]),
-                    item[1], item[2], item[3], item[4],
-                    Integer.parseInt(item[5]), Integer.parseInt(item[6]));
+                    item[1], item[2],
+                    item[3], item[4],
+                    item[5], item[6]);
 
             productionList.add(production);
         }
 
-        System.out.println("Nhập id nhân viên quản lý muốn xóa: ");
+        System.out.println("Nhập mã nhân viên quản lý muốn xóa: SX-XX");
         String input = scanner.nextLine();
         int choose = 0;
         int count = 0;
@@ -135,8 +139,9 @@ public class ProductionStaffImpl implements ProductionStaffService {
         productionList.clear();
         for (String[] item : list) {
             Production production = new Production(Integer.parseInt(item[0]),
-                    item[1], item[2], item[3], item[4],
-                    Integer.parseInt(item[5]), Integer.parseInt(item[6]));
+                    item[1], item[2],
+                    item[3], item[4],
+                    item[5], item[6]);
 
             productionList.add(production);
         }
@@ -144,14 +149,15 @@ public class ProductionStaffImpl implements ProductionStaffService {
         String search = scanner.nextLine();
         boolean check = false;
         for (int i = 0; i < productionList.size(); i++) {
-            if(productionList.get(i).getName().contains(search)){
+            if (productionList.get(i).getName().contains(search)) {
                 System.out.println(productionList.get(i));
                 check = true;
-            }else {
+            } else {
                 check = false;
             }
 
-        }if(check == false){
+        }
+        if (check == false) {
             System.out.println("Không thấy tên cần tìm");
         }
     }

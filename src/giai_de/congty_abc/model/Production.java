@@ -1,36 +1,36 @@
 package giai_de.congty_abc.model;
 
 public class Production extends Person {
-    private int productNumber;
-    private int productPrice;
+    private String productNumber;
+    private String productPrice;
 
     public Production() {
     }
 
-    public Production(int productNumber, int productPrice) {
+    public Production(String productNumber, String productPrice) {
         this.productNumber = productNumber;
         this.productPrice = productPrice;
     }
 
-    public Production(int id, String employeeCode, String name, String dayOfBirth, String address, int productNumber, int productPrice) {
+    public Production(int id, String employeeCode, String name, String dayOfBirth, String address, String productNumber, String productPrice) {
         super(id, employeeCode, name, dayOfBirth, address);
         this.productNumber = productNumber;
         this.productPrice = productPrice;
     }
 
-    public int getProductNumber() {
+    public String getProductNumber() {
         return productNumber;
     }
 
-    public void setProductNumber(int productNumber) {
+    public void setProductNumber(String productNumber) {
         this.productNumber = productNumber;
     }
 
-    public int getProductPrice() {
+    public String getProductPrice() {
         return productPrice;
     }
 
-    public void setProductPrice(int productPrice) {
+    public void setProductPrice(String productPrice) {
         this.productPrice = productPrice;
     }
 
