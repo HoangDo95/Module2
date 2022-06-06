@@ -1,6 +1,5 @@
 package giai_de.benh_vien.service.Impl;
 
-import giai_de.benh_vien.model.Normal;
 import giai_de.benh_vien.model.Vip;
 import giai_de.benh_vien.service.VipService;
 
@@ -116,6 +115,7 @@ public class VipServiceImpl implements VipService {
                         System.out.println("Delete Done");
                         display();
                         check = true;
+                        break;
                     case 2:
                         check = true;
                 }

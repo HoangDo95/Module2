@@ -12,12 +12,12 @@ public class NormalServiceImpl implements NormalService {
     public static Scanner scanner = new Scanner(System.in);
     public static List<Normal> normalList = new ArrayList<>();
 
-//    static {
-//        normalList.add( new Normal(1,"N1","anh","11/11/2000","12/11/2000","thích",1200));
-//        normalList.add( new Normal(2,"N2","em","11/12/2000","12/12/2000","thích",1300));
-//        normalList.add( new Normal(3,"N3","an","13/11/2000","13/12/2000","thích",1400));
-//    }
-//
+    static {
+        normalList.add( new Normal(1,"N1","anh","11/11/2000","12/11/2000","thích",1200));
+        normalList.add( new Normal(2,"N2","em","11/12/2000","12/12/2000","thích",1300));
+        normalList.add( new Normal(3,"N3","an","13/11/2000","13/12/2000","thích",1400));
+    }
+
     @Override
     public void add() {
         int count;
@@ -61,7 +61,7 @@ public class NormalServiceImpl implements NormalService {
         System.out.println("Nhập mã bệnh án cần xóa: ");
         int inputId = Integer.parseInt(scanner.nextLine());
         int choose = 0;
-        boolean check = false;
+        int count = 0;
         for (int i = 0; i < normalList.size(); i++) {
             if(inputId == normalList.get(i).getMedicalRecordNumber()){
                 System.out.println("Bạn muốn xóa: 1.Yes  2.No");
@@ -72,16 +72,17 @@ public class NormalServiceImpl implements NormalService {
                         normalList.remove(i);
                         System.out.println("Delete Done");
                         display();
-                        check = true;
+                        count++;
+                        break;
                     case 2:
-                        check = true;
+                        count++;
+                        break;
+
                 }
-
-            }else {
-                check = false;
             }
+        }
 
-        }if(check == false){
+        if (count == 0) {
             System.out.println("Bệnh án không tồn tại");
         }
     }
